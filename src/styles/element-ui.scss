@@ -1,0 +1,11 @@
+.el-upload {
+    input[type="file"] {
+        display: none !important;
+    }
+}
+
+// 取消标签页底部边框
+.el-tabs.el-tabs--border-card {
+    box-shadow: none;
+    border-bottom: none;
+}
