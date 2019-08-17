@@ -1,23 +1,44 @@
 <template>
-  <div class="app-wrapper" :class="classObj">
-    <!-- 左侧导航栏 -->
-    <sidebar class="sidebar-container" />
-    <!-- header -->
+  <div class="app-wrapper">
+    <header-title />
     <div class="main-container">
-      <div >
-        <navbar  />
-        <!-- 此处放置el-tabs代码 -->
-        <tags-view />
-      </div>
-      <!-- 内容区 -->
       <app-main />
     </div>
   </div>
 </template>
 
-<script lang="ts" src="./index.ts"></script>
+<script lang="ts" >
+import { Component, Vue } from "vue-property-decorator";
+import AppMain from "@/layout/components/AppMain/index.vue";
+import HeaderTitle from "@/layout/components/HeaderTitle/index.vue";
+
+@Component({
+  components: {
+    AppMain,
+    HeaderTitle
+  }
+})
+export default class Layout extends Vue {}
+</script>
 
 <style lang="scss" scoped>
-@import "./index.scss";
+@import "~@/styles/mixin.scss";
+@import "~@/styles/variables.scss";
+
+.app-wrapper {
+  @include clearfix;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  width: calc(100% - #{$sideBarWidth});
+  transition: width 0.28s;
+}
 </style>
 

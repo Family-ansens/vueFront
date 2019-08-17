@@ -4,7 +4,7 @@ import router from './router';
 import store from './store';
 
 import ElementUI from 'element-ui';
-import permission from '@/directive/permission/permission';
+// import permission from '@/directive/permission/permission';
 import "@/assets/scss/common.scss";
 import "@/styles/index.scss";
 import '../theme/index.css';
@@ -21,14 +21,14 @@ Vue.use(ElementUI);
  * 图标控件全局注册, 别名为svg-icon
  */
 Vue.use(SvgIcon, {
-  defaultWidth: '1em',
-  defaultHeight: '1em',
+  defaultWidth: '1.5em',
+  defaultHeight: '1.5em',
   tagName: 'svg-icon'
 });
 /**
  * 自定义指令 权限校验 v-permission
  */
-Vue.directive('permission', permission);
+// Vue.directive('permission', permission);
 
 new Vue({
   router,

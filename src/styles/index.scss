@@ -2,8 +2,7 @@
 @import './btn.scss';
 @import './mixin.scss';
 @import './variables.scss';
-// 导航栏样式
-@import './sidebar.scss';
+
 @import './variables.scss';
 // svg样式
 @import './svgicon.scss';
@@ -30,4 +29,10 @@ html {
 
 #app {
   height: 100%;
+
+  .main-container {
+    min-height: 100%;
+    transition: margin-left .28s;
+    position: relative;
+  }
 }
