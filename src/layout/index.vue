@@ -2,10 +2,11 @@
   <div class="app-wrapper">
     <header-title />
     <header-menu />
-    <div class="main-container">
+    <!-- <div class="main-container">
       <app-main />
-    </div>
-    <div class="footer-container">
+    </div> -->
+    <div >
+      <footer-hot-sale />
     </div>
   </div>
 </template>
@@ -15,12 +16,14 @@ import { Component, Vue } from "vue-property-decorator";
 import AppMain from "@/layout/components/AppMain/index.vue";
 import HeaderTitle from "@/layout/components/HeaderTitle/index.vue";
 import HeaderMenu from "@/layout/components/HeaderMenu/index.vue";
+import FooterHotSale from "@/layout/components/FooterHotSale/index.vue";
 
 @Component({
   components: {
     AppMain,
     HeaderTitle,
     HeaderMenu,
+    FooterHotSale,
   }
 })
 export default class Layout extends Vue {}
