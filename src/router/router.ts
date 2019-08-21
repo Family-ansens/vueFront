@@ -18,14 +18,19 @@ export const constantRoutes = [
         path: 'dashboard',
         component: () => import('@/views/dashboard/dashboard.vue'),
         name: 'Dashboard',
-        meta: { title: '仪表盘', icon: 'dashboard', affix: true }
+        meta: { title: '仪表盘', icon: 'dashboard' }
       }
     ]
   },
   {
+    path: '/test',
+    component: () => import('@/views/test/test.vue'),
+    name: 'test',
+    meta: { title: 'test', icon: 'dashboard' }
+  },
+  {
     path: '*',
     name: '404',
-    hidden: true,
     component: () => import('@/views/error-page/404.vue'),
     meta: {
       title: '404',

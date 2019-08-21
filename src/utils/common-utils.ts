@@ -7,16 +7,24 @@
  */
 
 import moment from 'moment';
+import cookie from 'js-cookie';
 
 interface ICommomUtil {
-    getParams(url: string): any;
-    hasKey(obj: any, key: string | number): number | boolean;
-    formatDate(datetime: string | Date): string;
-    verifyPhone(phone: number | string): any;
+  language: string;
+  getParams(url: string): any;
+  hasKey(obj: any, key: string | number): number | boolean;
+  formatDate(datetime: string | Date): string;
+  verifyPhone(phone: number | string): any;
 }
-
+const languageKey = "langage";
 class CommonUtil implements ICommomUtil {
-  
+  get language() {
+    return cookie.get(languageKey) as string;
+  }
+
+  set language(language: string) {
+    cookie.set(languageKey, language);
+  }
 /**
  * @param {String} url
  * @description 从URL中解析参数

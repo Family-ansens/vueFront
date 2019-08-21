@@ -9,13 +9,16 @@ import "@/assets/scss/common.scss";
 import "@/styles/index.scss";
 import '../theme/index.css';
 
+import i18n from '@/lang';
 import SvgIcon from 'vue-svgicon';
 import '@/icons';
 
 import './core';
 
 Vue.config.productionTip = false;
-Vue.use(ElementUI);
+Vue.use(ElementUI, {
+  i18n: (key: string, value: string) => i18n.t(key, value)
+});
 
 /**
  * 图标控件全局注册, 别名为svg-icon

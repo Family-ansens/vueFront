@@ -15,11 +15,6 @@
       <el-menu-item class="menu-item" index="5" ><span>新闻中心</span></el-menu-item>
       <el-menu-item class="menu-item" index="6" ><span>联系我们</span></el-menu-item>
     </el-menu>
-    <el-carousel>
-      <el-carousel-item v-for="item in 4" :key="item">
-        <h3 style="color: #fff; text-align: center;">{{item}}</h3>
-      </el-carousel-item>
-    </el-carousel>
   </div>
 </template>
 
@@ -35,9 +30,10 @@ export default class HeaderMenu extends Vue {
 
 <style lang="scss">
   .menu-item {
-    width: 16.66%;
+    width: 16.6666%;
     text-align: center;
     span {
+      letter-spacing: 7px;
       font-size: 25px;
     }
   }
