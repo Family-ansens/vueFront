@@ -20,8 +20,30 @@
               <span>552453110@qq.com</span>
             </div>
             <div class="topContactBox">
-              <svg-icon class="svg-icon" name="中文" />
-              <svg-icon class="svg-icon" name="英文" />
+              <el-dropdown
+                trigger="click"
+                class="international"
+                @command="handleSetLanguage"
+              >
+              <div>
+                <svg-icon
+                  name="language"
+                  class="international-icon"
+                />
+              </div>
+                <el-dropdown-menu slot="dropdown">
+                  <el-dropdown-item
+                    command="zh"
+                  >
+                    中文
+                  </el-dropdown-item>
+                  <el-dropdown-item
+                    command="en"
+                  >
+                    English
+                  </el-dropdown-item>
+                </el-dropdown-menu>
+              </el-dropdown>
             </div>
           </el-col>
         </el-row>
@@ -48,10 +70,27 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 @Component({
-  name: "HeaderTitle"
+  name: "HeaderTitle", 
 })
 export default class HeaderTitle extends Vue {
   private logoUrl = require("@/assets/img/logo.png");
+
+  get language() {
+    return this.$utils.common.language;
+  }
+
+  set language(val: string) {
+    this.$utils.common.language = val;
+  }
+
+  private handleSetLanguage(lang: string) {
+    this.$i18n.locale = lang;
+    this.language = lang;
+    this.$message({
+      message: 'Switch Language Success!',
+      type: 'success'
+    });
+  }
 }
 </script>
 

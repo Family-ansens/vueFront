@@ -7,10 +7,9 @@
         <h3 style="color: #fff; text-align: center;">{{item}}</h3>
       </el-carousel-item>
     </el-carousel>
-    <!-- <div class="main-container">
+    <div class="main-container">
       <app-main />
-    </div> -->
-
+    </div>
     <footer-hot-sale />
     <footer-contact />
     <header-menu />
@@ -46,6 +45,7 @@ export default class Layout extends Vue {}
   position: relative;
   height: 100%;
   width: 100%;
+  background-color: #000000;
 }
 
 .fixed-header {

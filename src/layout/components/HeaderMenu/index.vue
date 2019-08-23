@@ -8,12 +8,12 @@
       text-color="#fff"
       active-text-color="#006699"
     >
-      <el-menu-item class="menu-item" index="1" ><span>首页</span></el-menu-item>
-      <el-menu-item class="menu-item" index="2" ><span>产品展示</span></el-menu-item>
-      <el-menu-item class="menu-item" index="3" ><span>案例展示</span></el-menu-item>
-      <el-menu-item class="menu-item" index="4" ><span>公司介绍</span></el-menu-item>
-      <el-menu-item class="menu-item" index="5" ><span>新闻中心</span></el-menu-item>
-      <el-menu-item class="menu-item" index="6" ><span>联系我们</span></el-menu-item>
+      <el-menu-item class="menu-item" index="1" ><span>{{ $t('menuItem.home') }}</span></el-menu-item>
+      <el-menu-item class="menu-item" index="2" ><span>{{ $t('menuItem.products') }}</span></el-menu-item>
+      <el-menu-item class="menu-item" index="3" ><span>{{ $t('menuItem.cases') }}</span></el-menu-item>
+      <el-menu-item class="menu-item" index="4" ><span>{{ $t('menuItem.company') }}</span></el-menu-item>
+      <el-menu-item class="menu-item" index="5" ><span>{{ $t('menuItem.news') }}</span></el-menu-item>
+      <el-menu-item class="menu-item" index="6" ><span>{{ $t('menuItem.contactUs') }}</span></el-menu-item>
     </el-menu>
   </div>
 </template>
@@ -33,7 +33,7 @@ export default class HeaderMenu extends Vue {
     width: 16.6666%;
     text-align: center;
     span {
-      letter-spacing: 7px;
+      letter-spacing: 1px;
       font-size: 25px;
     }
   }

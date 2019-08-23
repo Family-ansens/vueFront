@@ -2,7 +2,7 @@
   <el-row style="height: 200px; background-color: #000; padding-top: 50px;">
     <el-col :span="8">
       <div class="contact-box">
-        <span class="header-title">联系我们</span>
+        <span class="header-title">{{ $t('footerContact.contactUs') }}</span>
         <div style="height: 25px;"/>
         <span class="company-title">安平县优瑞丝网机械有限公司</span>
         <br />
@@ -11,26 +11,26 @@
     </el-col>
     <el-col :span="8">
       <div class="contact-box" style="width: 300px;">
-        <span>Q Q：552453110</span>
+        <span>{{ $t('footerContact.qq') }}：552453110</span>
         <br />
-        <span>微信：15612839018</span>
+        <span>{{ $t('footerContact.weChat') }}：15612839018</span>
         <br />
-        <span>电话：+86 15612839018</span>
+        <span>{{ $t('footerContact.phone') }}：+86 15612839018</span>
         <br />
         <span>Skype:+86 15612839018</span>
         <br />
         <span>WhatsApp:+86 15612839018</span>
         <br />
-        <span>邮箱1：552453110@qq.com</span>
+        <span>{{ $t('footerContact.email1') }}：552453110@qq.com</span>
         <br />
-        <span>邮箱2：puscreenmesh@gmail.com</span>
+        <span>{{ $t('footerContact.email2') }}：puscreenmesh@gmail.com</span>
       </div>
     </el-col>
     <el-col :span="8">
       <div class="contact-box" style="text-align: center;">
         <el-image class="trcode-image" :src="trCodeUrl" />
         <br />
-        <span>微信二维码</span>
+        <span>{{ $t('footerContact.weChatQRCode') }}</span>
       </div>
     </el-col>
   </el-row>
@@ -54,7 +54,7 @@ export default class FooterContact extends Vue {
     width: 340px;
     margin: 0 auto;
     .header-title {
-      letter-spacing: 8px;
+      letter-spacing: 4px;
       font-size: 30px;
       border-bottom: solid #ffff 2px;
       padding-bottom: 4px;

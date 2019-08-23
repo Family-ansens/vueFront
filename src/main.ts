@@ -20,6 +20,9 @@ Vue.use(ElementUI, {
   i18n: (key: string, value: string) => i18n.t(key, value)
 });
 
+
+
+
 /**
  * 图标控件全局注册, 别名为svg-icon
  */
@@ -36,6 +39,7 @@ Vue.use(SvgIcon, {
 new Vue({
   router,
   store,
+  i18n,
   data() {
     return {
       //
