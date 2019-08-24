@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="height: 190px;">
     <el-row>
       <el-col :span="12">
         <el-image class="logo" :src="logoUrl"></el-image>
@@ -20,28 +20,13 @@
               <span>552453110@qq.com</span>
             </div>
             <div class="topContactBox">
-              <el-dropdown
-                trigger="click"
-                class="international"
-                @command="handleSetLanguage"
-              >
-              <div>
-                <svg-icon
-                  name="language"
-                  class="international-icon"
-                />
-              </div>
+              <el-dropdown trigger="click" class="international" @command="handleSetLanguage">
+                <div>
+                  <svg-icon name="language" class="international-icon" />
+                </div>
                 <el-dropdown-menu slot="dropdown">
-                  <el-dropdown-item
-                    command="zh"
-                  >
-                    中文
-                  </el-dropdown-item>
-                  <el-dropdown-item
-                    command="en"
-                  >
-                    English
-                  </el-dropdown-item>
+                  <el-dropdown-item :disabled="language==='zh'" command="zh">中文</el-dropdown-item>
+                  <el-dropdown-item :disabled="language==='en'" command="en">English</el-dropdown-item>
                 </el-dropdown-menu>
               </el-dropdown>
             </div>
@@ -49,16 +34,16 @@
         </el-row>
         <el-row>
           <el-col>
-            <div class="topRightContactBox" >
-              <svg-icon name="skype" color="#15ACE5"/>
-              <svg-icon name="fackbook" color="#3C5A99"/>
-              <svg-icon name="original-whatapp" color="#3EBE2A"/>
+            <div class="topRightContactBox">
+              <svg-icon name="skype" color="#15ACE5" />
+              <svg-icon name="fackbook" color="#3C5A99" />
+              <svg-icon name="original-whatapp" color="#3EBE2A" />
               <svg-icon name="youtube" color="#cc0002" />
               <svg-icon name="优酷" color="#38CEFF #0B99FF #FF4A4A" />
-              <svg-icon name="推特" color="#0a71b0"/>
-              <svg-icon name="领英" color="#008DC2"/>
-              <svg-icon name="instagram" color="#D81E06"/>
-              <svg-icon name="pinterest" color="#C02328"/>
+              <svg-icon name="推特" color="#0a71b0" />
+              <svg-icon name="领英" color="#008DC2" />
+              <svg-icon name="instagram" color="#D81E06" />
+              <svg-icon name="pinterest" color="#C02328" />
             </div>
           </el-col>
         </el-row>
@@ -70,7 +55,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 @Component({
-  name: "HeaderTitle", 
+  name: "HeaderTitle"
 })
 export default class HeaderTitle extends Vue {
   private logoUrl = require("@/assets/img/logo.png");
@@ -87,9 +72,10 @@ export default class HeaderTitle extends Vue {
     this.$i18n.locale = lang;
     this.language = lang;
     this.$message({
-      message: 'Switch Language Success!',
-      type: 'success'
+      message: "Switch Language Success!",
+      type: "success"
     });
+    this.$router.push(`/redirect${this.$route.fullPath}`);
   }
 }
 </script>
@@ -97,12 +83,12 @@ export default class HeaderTitle extends Vue {
 <style lang="scss" scoped>
 .logo {
   width: 550px;
-  padding: 30px 0px 0px 90px;
+  padding: 50px 0px 0px 90px;
 }
 
 .borderBottom {
   background: #003d5c;
-  border-bottom-left-radius: 40px;
+  border-bottom-left-radius: 25px;
 }
 
 .topContactBox {

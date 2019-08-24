@@ -26,7 +26,13 @@ export const constantRoutes = [
     path: '/test',
     component: () => import('@/views/test/test.vue'),
     name: 'test',
-    meta: { title: 'test', icon: 'dashboard' }
+    meta: { title: 'test' }
+  },
+  {
+    path: '/redirect/:path*',
+    component: () => import('@/views/redirect/redirect.vue'),
+    name: 'redirect',
+    meta: { title: 'redirect' }
   },
   {
     path: '*',

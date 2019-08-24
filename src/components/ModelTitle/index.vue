@@ -30,8 +30,9 @@ export default class ModelTitle extends Vue {
 
 <style lang="scss" scoped>
  .footer-hot-sale-box {
+   padding-top: 15px;
   .title {
-    height: 75px;
+    height: 85px;
     text-align: center;
     span {
       font-size: 30px;
@@ -44,6 +45,6 @@ export default class ModelTitle extends Vue {
 
 .more-button {
   float: right;
-  margin:17px 100px 0 0;
+  margin:10px 100px 0 0;
 }
 </style>
