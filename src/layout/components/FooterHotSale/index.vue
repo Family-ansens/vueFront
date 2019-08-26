@@ -1,6 +1,15 @@
 <template>
   <div style="background-color: #05101a;">
-    <model-title :title="$t('modelTitle.hotSale')" url="/" />
+    <el-row class="footer-hot-sale-box">
+      <el-col :offset="8" :span="8">
+        <div class="title">
+          <span>{{ $t('modelTitle.hotSale') }}</span>
+        </div>
+      </el-col>
+      <el-col :span="8">
+        <more-button class="more-button" url="/" />
+      </el-col>
+    </el-row>
     <el-row>
       <div>
         <el-carousel type="card" height="200px">
@@ -26,13 +35,13 @@
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import ModelTitle from "@/components/ModelTitle/index.vue";
+import MoreButton from "@/components/MoreButton/index.vue";
 import i18n from "@/lang";
 
 @Component({
   name: "FooterHotSale",
   components: {
-    ModelTitle
+    MoreButton,
   }
 })
 export default class FooterHotSale extends Vue {
@@ -47,6 +56,26 @@ export default class FooterHotSale extends Vue {
 </style>
 
 <style lang="scss" scoped>
+// 热销走马灯标题
+.footer-hot-sale-box {
+   padding-top: 15px;
+  .title {
+    height: 85px;
+    text-align: center;
+    span {
+      font-size: 30px;
+      color: #fff;
+      border-bottom: solid #1d678c 4px;
+      padding-bottom: 8px;
+    }
+  }
+}
+
+.more-button {
+  float: right;
+  margin:10px 100px 0 0;
+}
+//热销走马灯样式
 .text-box {
   span {
     font: 25px bolder;

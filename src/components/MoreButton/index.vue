@@ -20,12 +20,12 @@ export default class MoreButton extends Vue {
 .button {
   background-color: #0f3348;
   border-radius: 12px;
-  width: 55px;
+  width: 65px;
   text-align: center;
   line-height: 25px;
   span {
     color: #cdd0d3;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
     letter-spacing: 1px;
   }

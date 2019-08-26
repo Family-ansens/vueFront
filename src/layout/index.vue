@@ -4,7 +4,7 @@
     <header-menu />
     <el-carousel>
       <el-carousel-item v-for="item in 4" :key="item">
-        <h3 style="color: #fff; text-align: center;">{{item}}</h3>
+        <el-image :key="fill" :src="product1Url" />
       </el-carousel-item>
     </el-carousel>
     <div class="main-container">
@@ -33,7 +33,9 @@ import FooterContact from "@/layout/components/FooterContact/index.vue";
     FooterContact,
   }
 })
-export default class Layout extends Vue {}
+export default class Layout extends Vue {
+  private product1Url = require("@/assets/img/product/product1.png");
+}
 </script>
 
 <style lang="scss" scoped>

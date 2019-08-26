@@ -7,7 +7,7 @@
       </div>
     </el-col>
     <el-col :span="8">
-      <more-button class="more-button" :url="url" />
+      <more-button class="more-button" :url="url" v-if="showMoreButton"/>
     </el-col>
   </el-row>
   </div>
@@ -25,6 +25,7 @@ import MoreButton from "@/components/MoreButton/index.vue";
 export default class ModelTitle extends Vue {
   @Prop({ required: true }) private title!: string;
   @Prop({ required: true }) private url!: string;
+  @Prop({ default: false }) private showMoreButton!: boolean;
 }
 </script>
 
@@ -35,7 +36,8 @@ export default class ModelTitle extends Vue {
     height: 85px;
     text-align: center;
     span {
-      font-size: 30px;
+      font-size: 45px;
+      letter-spacing: 3px;
       color: #fff;
       border-bottom: solid #1d678c 4px;
       padding-bottom: 8px;
@@ -45,6 +47,6 @@ export default class ModelTitle extends Vue {
 
 .more-button {
   float: right;
-  margin:10px 100px 0 0;
+  margin:13px 100px 0 0;
 }
 </style>

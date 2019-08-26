@@ -1,5 +1,13 @@
 export default {
+  picUrl: {
+    logo: 'logo-en',
+  },
   modelTitle: {
+    company: 'COMPANY INDE',
+    companySynopsis: 'SYNOPSIS',
+    products: 'PRODUCTS',
+    cases: 'CASES',
+    news: 'NEWS',
     hotSale: 'HOT SALE',
   },
   components: {

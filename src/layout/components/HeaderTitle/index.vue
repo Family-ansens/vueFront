@@ -2,7 +2,7 @@
   <div style="height: 190px;">
     <el-row>
       <el-col :span="12">
-        <el-image class="logo" :src="logoUrl"></el-image>
+        <el-image class="logo" :src="language === 'en'? logoUrlEN : logoUrlZH"></el-image>
       </el-col>
       <el-col :offest="12" :span="12">
         <el-row>
@@ -58,7 +58,8 @@ import { Component, Vue } from "vue-property-decorator";
   name: "HeaderTitle"
 })
 export default class HeaderTitle extends Vue {
-  private logoUrl = require("@/assets/img/logo.png");
+  private logoUrlEN = require("@/assets/img/logo-en.png");
+  private logoUrlZH = require("@/assets/img/logo-zh.png");
 
   get language() {
     return this.$utils.common.language;

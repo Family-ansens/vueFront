@@ -1,5 +1,13 @@
 export default {
+  picUrl: {
+    logo: 'logo-zh',
+  },
   modelTitle: {
+    company: '公司介绍',
+    companySynopsis: '公司简介',
+    products: '产品介绍',
+    cases: '应用展示',
+    news: '公司动态',
     hotSale: '热销产品',
   },
   components: {
