@@ -8,12 +8,26 @@
       text-color="#fff"
       active-text-color="#006699"
     >
+    <el-row>
+      <el-col :xs="12" :sm="8" :lg="4">
       <el-menu-item class="menu-item" index="1" ><span>{{ $t('menuItem.home') }}</span></el-menu-item>
+      </el-col>
+      <el-col :xs="12" :sm="8" :lg="4">
       <el-menu-item class="menu-item" index="2" ><span>{{ $t('menuItem.products') }}</span></el-menu-item>
+      </el-col>
+      <el-col :xs="12" :sm="8" :lg="4">
       <el-menu-item class="menu-item" index="3" ><span>{{ $t('menuItem.cases') }}</span></el-menu-item>
+      </el-col>
+      <el-col :xs="12" :sm="8" :lg="4">
       <el-menu-item class="menu-item" index="4" ><span>{{ $t('menuItem.company') }}</span></el-menu-item>
+      </el-col>
+      <el-col :xs="12" :sm="8" :lg="4">
       <el-menu-item class="menu-item" index="5" ><span>{{ $t('menuItem.news') }}</span></el-menu-item>
+      </el-col>
+      <el-col :xs="12" :sm="8" :lg="4">
       <el-menu-item class="menu-item" index="6" ><span>{{ $t('menuItem.contactUs') }}</span></el-menu-item>
+      </el-col>
+    </el-row>
     </el-menu>
   </div>
 </template>
@@ -30,7 +44,7 @@ export default class HeaderMenu extends Vue {
 
 <style lang="scss">
   .menu-item {
-    width: 16.6666%;
+    // width: 16.6666%;
     text-align: center;
     span {
       letter-spacing: 1px;

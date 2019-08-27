@@ -3,7 +3,7 @@ export default {
     logo: 'logo-en',
   },
   modelTitle: {
-    company: 'COMPANY INDE',
+    company: 'COMPANY',
     companySynopsis: 'SYNOPSIS',
     products: 'PRODUCTS',
     cases: 'CASES',
@@ -12,6 +12,7 @@ export default {
   },
   components: {
     moreButton: 'MORE',
+    languageButton: 'CHANGE LANGUAGE',
   },
   menuItem: {
     home: 'HOME',

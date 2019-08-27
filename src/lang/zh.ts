@@ -12,6 +12,7 @@ export default {
   },
   components: {
     moreButton: '更多',
+    languageButton: '更换语言',
   },
   menuItem: {
     home: '首页',

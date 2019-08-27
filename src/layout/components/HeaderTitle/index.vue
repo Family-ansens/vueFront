@@ -1,35 +1,42 @@
 <template>
-  <div style="height: 190px;">
+  <div>
     <el-row>
-      <el-col :span="12">
-        <el-image class="logo" :src="language === 'en'? logoUrlEN : logoUrlZH"></el-image>
-      </el-col>
-      <el-col :offest="12" :span="12">
+      <el-col :xs="24" :sm="24" :lg="12">
         <el-row>
-          <el-col class="borderBottom">
-            <div class="topContactBox">
-              <svg-icon class="svg-icon" name="微信" />
-              <span>15612839018</span>
-            </div>
-            <div class="topContactBox">
-              <svg-icon class="svg-icon" name="QQ" />
-              <span>552453110</span>
-            </div>
-            <div class="topContactBox">
-              <svg-icon class="svg-icon" name="email" />
-              <span>552453110@qq.com</span>
-            </div>
-            <div class="topContactBox">
-              <el-dropdown trigger="click" class="international" @command="handleSetLanguage">
-                <div>
-                  <svg-icon name="language" class="international-icon" />
-                </div>
-                <el-dropdown-menu slot="dropdown">
-                  <el-dropdown-item :disabled="language==='zh'" command="zh">中文</el-dropdown-item>
-                  <el-dropdown-item :disabled="language==='en'" command="en">English</el-dropdown-item>
-                </el-dropdown-menu>
-              </el-dropdown>
-            </div>
+          <el-col :xs="0.5" :sm="1" :lg="3">
+            &nbsp;
+          </el-col >
+          <el-col :xs="23" :sm="22" :lg="20">
+            <el-image class="logo" :src="language === 'en'? logoUrlEN : logoUrlZH"></el-image>
+          </el-col>
+          <el-col :xs="0.5" :sm="1" :lg="1">
+            &nbsp;
+          </el-col >
+        </el-row>
+      </el-col>
+      <el-col :xs="24" :sm="24" :lg="12">
+        <el-row class="borderBottom">
+          <el-col class="topContactBox" :xs="12" :sm="12" :lg="6">
+            <svg-icon class="svg-icon" name="微信" />
+            <span>15612839018</span>
+          </el-col>
+          <el-col class="topContactBox" :xs="12" :sm="12" :lg="6">
+            <svg-icon class="svg-icon" name="QQ" />
+            <span>552453110</span>
+          </el-col>
+          <el-col class="topContactBox" :xs="12" :sm="12" :lg="8">
+            <svg-icon class="svg-icon" name="email" />
+            <span>552453110@qq.com</span>
+          </el-col>
+          <el-col class="topContactBox" :xs="12" :sm="12" :lg="4">
+            <el-dropdown trigger="click" @command="handleSetLanguage">
+              <svg-icon name="language" class="svg-icon" color="#bbc7cf"/>
+              <span style="color: #bbc7cf;">{{ $t('components.languageButton') }}</span>
+              <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item :disabled="language==='zh'" command="zh">中文</el-dropdown-item>
+                <el-dropdown-item :disabled="language==='en'" command="en">English</el-dropdown-item>
+              </el-dropdown-menu>
+            </el-dropdown>
           </el-col>
         </el-row>
         <el-row>
@@ -83,8 +90,8 @@ export default class HeaderTitle extends Vue {
 
 <style lang="scss" scoped>
 .logo {
-  width: 550px;
-  padding: 50px 0px 0px 90px;
+  width: 100%;
+  padding-top: 30px;
 }
 
 .borderBottom {
@@ -93,18 +100,15 @@ export default class HeaderTitle extends Vue {
 }
 
 .topContactBox {
-  display: inline-block;
-  margin-left: 40px;
+  color: #bbc7cf;
+  padding-left: 10px;
+  height: 40px;
   span {
     margin-left: 5px;
     line-height: 40px;
-    height: 40px;
     font-size: 15px;
-    color: #bbc7cf;
-    text-align: center;
   }
   .svg-icon {
-    color: #bbc7cf;
     vertical-align: middle;
   }
 }

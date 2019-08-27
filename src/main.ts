@@ -8,6 +8,8 @@ import ElementUI from 'element-ui';
 import "@/assets/scss/common.scss";
 import "@/styles/index.scss";
 import '../theme/index.css';
+// 响应式css
+import 'element-ui/lib/theme-chalk/display.css';
 
 import i18n from '@/lang';
 import SvgIcon from 'vue-svgicon';

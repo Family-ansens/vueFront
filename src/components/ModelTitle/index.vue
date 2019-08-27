@@ -1,13 +1,16 @@
 <template>
   <div>
     <el-row class="footer-hot-sale-box">
-    <el-col :offset="8" :span="8">
+      <el-col :xs="2" :sm="4" :lg="8">
+        &nbsp;
+      </el-col>
+    <el-col :xs="20" :sm="16" :lg="8">
       <div class="title">
         <span>{{ title }}</span>
       </div>
     </el-col>
-    <el-col :span="8">
-      <more-button class="more-button" :url="url" v-if="showMoreButton"/>
+    <el-col :xs="2" :sm="4" :lg="8">
+      <more-button class="more-button hidden-xs-only" :url="url" v-if="showMoreButton"/>
     </el-col>
   </el-row>
   </div>
@@ -47,6 +50,6 @@ export default class ModelTitle extends Vue {
 
 .more-button {
   float: right;
-  margin:13px 100px 0 0;
+  margin:13px 50px 0 0;
 }
 </style>

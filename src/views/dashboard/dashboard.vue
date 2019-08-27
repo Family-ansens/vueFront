@@ -5,7 +5,7 @@
       <div class="company-introduction">
         <model-title :showMoreButton="false" :title="$t('modelTitle.company')" />
         <el-row>
-          <el-col :xs="24" :sm="24" :lg="15">
+          <el-col :xs="24" :sm="24" :lg="15" style="padding: 15px;">
             <el-image class="synopsis-main-pic" :src="introductUrl" fit="contain" />
           </el-col>
           <el-col :xs="24" :sm="24" :lg="9">
@@ -34,18 +34,20 @@
 
     <!-- 产品介绍 -->
     <el-row style="margin-bottom: 30px;">
-      <div>
-        <model-title :showMoreButton="true" :title="$t('modelTitle.products')" url="/" />
-        <el-tabs style="width: 720px; margin: 0 auto;">
-          <el-tab-pane
-            v-for="(item, index) in productsGroupsArrays"
-            :label="item.title"
-            :name="item.name"
-            :key="index"
-            style="color: #ffffff;"
-          />
-        </el-tabs>
-      </div>
+      <model-title :showMoreButton="true" :title="$t('modelTitle.products')" url="/" />
+      <el-row>
+        <el-col class="hidden-xs-only">
+          <el-tabs style="width: 720px; margin: 0 auto;">
+            <el-tab-pane
+              v-for="(item, index) in productsGroupsArrays"
+              :label="item.title"
+              :name="item.name"
+              :key="index"
+              style="color: #ffffff;"
+            />
+          </el-tabs>
+        </el-col>
+      </el-row>
       <el-row>
         <el-col :xs="24" :sm="24" :lg="8">
           <div class="chart-wrapper">
@@ -84,8 +86,8 @@
 
     <!-- 应用展示 -->
     <el-row style="background-color: #05101a; padding-bottom: 30px;">
-      <div>
-        <model-title :showMoreButton="true" :title="$t('modelTitle.cases')" url="/" />
+      <model-title :showMoreButton="true" :title="$t('modelTitle.cases')" url="/" />
+      <el-col class="hidden-xs-only">
         <el-tabs style="width: 720px; margin: 0 auto;">
           <el-tab-pane
             v-for="(item, index) in productsGroupsArrays"
@@ -95,7 +97,7 @@
             style="color: #ffffff;"
           />
         </el-tabs>
-      </div>
+      </el-col>
       <el-row>
         <el-col :xs="24" :sm="24" :lg="8">
           <div class="chart-wrapper">
@@ -140,34 +142,70 @@
       <el-row>
         <el-col :xs="24" :sm="24" :lg="8">
           <div>
-            <news-card class="news-card-wrapper" :picUrl="introductUrl" :title="data.title" :context="data.context" :date="data.date"/>
+            <news-card
+              class="news-card-wrapper"
+              :picUrl="introductUrl"
+              :title="data.title"
+              :context="data.context"
+              :date="data.date"
+            />
           </div>
         </el-col>
         <el-col :xs="24" :sm="24" :lg="8">
           <div>
-            <news-card class="news-card-wrapper" :picUrl="introductUrl" :title="data.title" :context="data.context" :date="data.date" />
+            <news-card
+              class="news-card-wrapper"
+              :picUrl="introductUrl"
+              :title="data.title"
+              :context="data.context"
+              :date="data.date"
+            />
           </div>
         </el-col>
         <el-col :xs="24" :sm="24" :lg="8">
           <div>
-            <news-card class="news-card-wrapper" :picUrl="introductUrl" :title="data.title" :context="data.context" :date="data.date" />
+            <news-card
+              class="news-card-wrapper"
+              :picUrl="introductUrl"
+              :title="data.title"
+              :context="data.context"
+              :date="data.date"
+            />
           </div>
         </el-col>
       </el-row>
       <el-row style="margin-top: 35px;">
         <el-col :xs="24" :sm="24" :lg="8">
           <div>
-            <news-card class="news-card-wrapper" :picUrl="introductUrl" :title="data.title" :context="data.context" :date="data.date"/>
+            <news-card
+              class="news-card-wrapper"
+              :picUrl="introductUrl"
+              :title="data.title"
+              :context="data.context"
+              :date="data.date"
+            />
           </div>
         </el-col>
         <el-col :xs="24" :sm="24" :lg="8">
           <div>
-            <news-card class="news-card-wrapper" :picUrl="introductUrl" :title="data.title" :context="data.context" :date="data.date" />
+            <news-card
+              class="news-card-wrapper"
+              :picUrl="introductUrl"
+              :title="data.title"
+              :context="data.context"
+              :date="data.date"
+            />
           </div>
         </el-col>
         <el-col :xs="24" :sm="24" :lg="8">
           <div>
-            <news-card class="news-card-wrapper" :picUrl="introductUrl" :title="data.title" :context="data.context" :date="data.date" />
+            <news-card
+              class="news-card-wrapper"
+              :picUrl="introductUrl"
+              :title="data.title"
+              :context="data.context"
+              :date="data.date"
+            />
           </div>
         </el-col>
       </el-row>
@@ -215,7 +253,8 @@ export default class Dashboard extends Vue {
 
   private data = {
     title: "标题标题标题标题",
-    context: "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试",
+    context:
+      "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试",
     date: "2019.08.26"
   };
 }
@@ -236,8 +275,7 @@ export default class Dashboard extends Vue {
 
   .synopsis-main-pic {
     height: 500px;
-    width: 750px;
-    margin: 25px;
+    width: 100%;
   }
 
   .company-title {
