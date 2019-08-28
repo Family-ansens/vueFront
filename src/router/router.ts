@@ -23,6 +23,32 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/product',
+    component: Layout,
+    redirect: '/product',
+    children: [
+      {
+        path: 'list',
+        component: () => import('@/views/product/ProductList.vue'),
+        name: 'product-list',
+        meta: { title: '产品列表'}
+      }
+    ]
+  },
+  {
+    path: '/case',
+    component: Layout,
+    redirect: '/case',
+    children: [
+      {
+        path: 'list',
+        component: () => import('@/views/case/CaseList.vue'),
+        name: 'case-list',
+        meta: { title: '应用列表'}
+      }
+    ]
+  },
+  {
     path: '/test',
     component: () => import('@/views/test/test.vue'),
     name: 'test',

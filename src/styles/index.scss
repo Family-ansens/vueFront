@@ -40,4 +40,8 @@ html {
     position: relative;
     background: #000;
   }
+
+  .scrollbar-wrapper {
+    overflow-x: hidden !important;
+  }
 }

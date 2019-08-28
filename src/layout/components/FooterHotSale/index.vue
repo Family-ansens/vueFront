@@ -7,7 +7,7 @@
         </div>
       </el-col>
       <el-col :span="8">
-        <more-button class="more-button" url="/" />
+        <more-button class="more-button" url="/product/list" />
       </el-col>
     </el-row>
     <el-row>

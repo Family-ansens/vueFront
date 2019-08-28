@@ -3,6 +3,7 @@
   <div>
     <el-row>
       <div class="company-introduction">
+        <header-carousel />
         <model-title :showMoreButton="false" :title="$t('modelTitle.company')" />
         <el-row>
           <el-col :xs="24" :sm="24" :lg="15" style="padding: 15px;">
@@ -34,7 +35,7 @@
 
     <!-- 产品介绍 -->
     <el-row style="margin-bottom: 30px;">
-      <model-title :showMoreButton="true" :title="$t('modelTitle.products')" url="/" />
+      <model-title :showMoreButton="true" :title="$t('modelTitle.products')" url="/product/list" />
       <el-row>
         <el-col class="hidden-xs-only">
           <el-tabs style="width: 720px; margin: 0 auto;">
@@ -86,7 +87,7 @@
 
     <!-- 应用展示 -->
     <el-row style="background-color: #05101a; padding-bottom: 30px;">
-      <model-title :showMoreButton="true" :title="$t('modelTitle.cases')" url="/" />
+      <model-title :showMoreButton="true" :title="$t('modelTitle.cases')" url="/case/list" />
       <el-col class="hidden-xs-only">
         <el-tabs style="width: 720px; margin: 0 auto;">
           <el-tab-pane
@@ -217,13 +218,15 @@
 import ModelTitle from "@/components/ModelTitle/index.vue";
 import ProductCard from "@/components/ProductCard/index.vue";
 import NewsCard from "@/components/NewsCard/index.vue";
+import HeaderCarousel from "@/components/HeaderCarousel/index.vue";
 import { Vue, Component } from "vue-property-decorator";
 
 @Component({
   components: {
     ModelTitle,
     ProductCard,
-    NewsCard
+    NewsCard,
+    HeaderCarousel
   }
 })
 export default class Dashboard extends Vue {

@@ -20,7 +20,7 @@
             <svg-icon class="svg-icon" name="微信" />
             <span>15612839018</span>
           </el-col>
-          <el-col class="topContactBox" :xs="12" :sm="12" :lg="6">
+          <el-col class="topContactBox" :xs="12" :sm="12" :lg="5">
             <svg-icon class="svg-icon" name="QQ" />
             <span>552453110</span>
           </el-col>
@@ -28,7 +28,7 @@
             <svg-icon class="svg-icon" name="email" />
             <span>552453110@qq.com</span>
           </el-col>
-          <el-col class="topContactBox" :xs="12" :sm="12" :lg="4">
+          <el-col class="topContactBox" :xs="12" :sm="12" :lg="5">
             <el-dropdown trigger="click" @command="handleSetLanguage">
               <svg-icon name="language" class="svg-icon" color="#bbc7cf"/>
               <span style="color: #bbc7cf;">{{ $t('components.languageButton') }}</span>

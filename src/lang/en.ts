@@ -12,10 +12,10 @@ export default {
   },
   components: {
     moreButton: 'MORE',
-    languageButton: 'CHANGE LANGUAGE',
+    languageButton: 'LANGUAGE',
   },
   menuItem: {
-    home: 'HOME',
+    dashboard: 'HOME',
     products: 'PRODUCTS',
     cases: 'CASES',
     company: 'COMPANY',
@@ -30,5 +30,11 @@ export default {
     email1: 'Email1',
     email2: 'Email2',
     weChatQRCode: 'WeChat QR Code',
+  },
+  products: {
+    title: 'PRODUCT',
+  },
+  cases: {
+    title: 'CASE',
   }
 };

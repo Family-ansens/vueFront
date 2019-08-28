@@ -1,18 +1,19 @@
 <template>
   <div class="app-wrapper">
-    <header-title />
-    <header-menu />
-    <el-carousel>
-      <el-carousel-item v-for="item in 4" :key="item">
-        <el-image :key="fill" :src="product1Url" />
-      </el-carousel-item>
-    </el-carousel>
-    <div class="main-container">
-      <app-main />
-    </div>
-    <footer-hot-sale />
-    <footer-contact />
-    <header-menu />
+    <!-- <el-header> -->
+      <header-title />
+      <header-menu />
+    <!-- </el-header> -->
+    <!-- <el-main> -->
+      <div class="main-container">
+        <app-main />
+      </div>
+    <!-- </el-main> -->
+    <!-- <el-footer> -->
+      <footer-hot-sale />
+      <footer-contact />
+      <header-menu />
+    <!-- </el-footer> -->
   </div>
 </template>
 
@@ -30,11 +31,11 @@ import FooterContact from "@/layout/components/FooterContact/index.vue";
     HeaderTitle,
     HeaderMenu,
     FooterHotSale,
-    FooterContact,
+    FooterContact
   }
 })
 export default class Layout extends Vue {
-  private product1Url = require("@/assets/img/product/product1.png");
+
 }
 </script>
 

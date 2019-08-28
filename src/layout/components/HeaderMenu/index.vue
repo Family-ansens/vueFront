@@ -1,54 +1,61 @@
 <template>
   <div>
-    <!-- el-menu的低外框线死活去不掉，唯有用style来搞它 -->
+    <!-- el-menu的低外框线死活去不掉，唯有用style来搞它 PS:激活颜色原本为#006699，但因为页面跳转，需要另外开发 -->
     <el-menu
-      style="border-bottom: none;" 
+      style="border-bottom: none;"
       mode="horizontal"
       background-color="#000"
       text-color="#fff"
-      active-text-color="#006699"
+      active-text-color="#fff"
+      :default-active="activeIndex"
     >
-    <el-row>
-      <el-col :xs="12" :sm="8" :lg="4">
-      <el-menu-item class="menu-item" index="1" ><span>{{ $t('menuItem.home') }}</span></el-menu-item>
-      </el-col>
-      <el-col :xs="12" :sm="8" :lg="4">
-      <el-menu-item class="menu-item" index="2" ><span>{{ $t('menuItem.products') }}</span></el-menu-item>
-      </el-col>
-      <el-col :xs="12" :sm="8" :lg="4">
-      <el-menu-item class="menu-item" index="3" ><span>{{ $t('menuItem.cases') }}</span></el-menu-item>
-      </el-col>
-      <el-col :xs="12" :sm="8" :lg="4">
-      <el-menu-item class="menu-item" index="4" ><span>{{ $t('menuItem.company') }}</span></el-menu-item>
-      </el-col>
-      <el-col :xs="12" :sm="8" :lg="4">
-      <el-menu-item class="menu-item" index="5" ><span>{{ $t('menuItem.news') }}</span></el-menu-item>
-      </el-col>
-      <el-col :xs="12" :sm="8" :lg="4">
-      <el-menu-item class="menu-item" index="6" ><span>{{ $t('menuItem.contactUs') }}</span></el-menu-item>
-      </el-col>
-    </el-row>
+      <el-row>
+        <el-col v-for="item in menuItem" :key="item.index" :xs="12" :sm="8" :lg="4">
+          <router-link tag="el-menu-item" :to="item.bashUrl">
+            <el-menu-item class="menu-item" :index="item.index">
+              <span>{{ $t('menuItem.' + item.name) }}</span>
+            </el-menu-item>
+          </router-link>
+        </el-col>
+      </el-row>
     </el-menu>
   </div>
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from 'vue-property-decorator';
+import { Vue, Component, Prop } from "vue-property-decorator";
 @Component({
-  name: 'HeaderMenu'
+  name: "HeaderMenu"
 })
 export default class HeaderMenu extends Vue {
-  
+  // @Prop() activeIndex!: string;
+
+  get activeIndex() {
+    return this.$services.view.menuActiveIndex;
+  }
+
+  set activeIndex(index: string) {
+    this.$services.view.menuActiveIndex = index;
+  }
+
+  private menuItem = [
+    { bashUrl: "/dashboard", index: "dashboard", name: 'dashboard' },
+    { bashUrl: "/product/list", index: "product-list", name: 'products' },
+    { bashUrl: "/case/list", index: "case-list", name: 'cases' },
+    { bashUrl: "/company/list", index: "company-list", name: 'company' },
+    { bashUrl: "/news/list", index: "news-list", name: 'news' },
+    { bashUrl: "/contactUs", index: "contactUs", name: 'contactUs' }
+  ];
 }
 </script>
 
 <style lang="scss">
-  .menu-item {
-    // width: 16.6666%;
-    text-align: center;
-    span {
-      letter-spacing: 1px;
-      font-size: 25px;
-    }
+.menu-item {
+  // width: 16.6666%;
+  text-align: center;
+  span {
+    letter-spacing: 1px;
+    font-size: 25px;
   }
+}
 </style>

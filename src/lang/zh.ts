@@ -15,7 +15,7 @@ export default {
     languageButton: '更换语言',
   },
   menuItem: {
-    home: '首页',
+    dashboard: '首页',
     products: '产品展示',
     cases: '案例展示',
     company: '公司介绍',
@@ -30,5 +30,11 @@ export default {
     email1: '邮箱1',
     email2: '邮箱2',
     weChatQRCode: '微信二维码',
+  },
+  products: {
+    title: '产品',
+  },
+  cases: {
+    title: 'CASE',
   }
 };
