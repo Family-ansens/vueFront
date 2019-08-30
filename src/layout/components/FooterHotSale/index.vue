@@ -1,12 +1,15 @@
 <template>
   <div style="background-color: #05101a;">
     <el-row class="footer-hot-sale-box">
-      <el-col :offset="8" :span="8">
+      <el-col :xs="0" :sm="8" :lg="8">
+        &nbsp;
+      </el-col>
+      <el-col :xs="24" :sm="8" :lg="8">
         <div class="title">
           <span>{{ $t('modelTitle.hotSale') }}</span>
         </div>
       </el-col>
-      <el-col :span="8">
+      <el-col :xs="0" :sm="8" :lg="8">
         <more-button class="more-button" url="/product/list" />
       </el-col>
     </el-row>

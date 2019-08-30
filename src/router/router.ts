@@ -18,7 +18,7 @@ export const constantRoutes = [
         path: 'dashboard',
         component: () => import('@/views/dashboard/dashboard.vue'),
         name: 'Dashboard',
-        meta: { title: '仪表盘', icon: 'dashboard' }
+        meta: { title: '仪表盘' }
       }
     ]
   },
@@ -31,7 +31,7 @@ export const constantRoutes = [
         path: 'list',
         component: () => import('@/views/product/ProductList.vue'),
         name: 'product-list',
-        meta: { title: '产品列表'}
+        meta: { title: '产品列表' }
       }
     ]
   },
@@ -44,7 +44,33 @@ export const constantRoutes = [
         path: 'list',
         component: () => import('@/views/case/CaseList.vue'),
         name: 'case-list',
-        meta: { title: '应用列表'}
+        meta: { title: '案例列表' }
+      }
+    ]
+  },
+  {
+    path: '/company',
+    component: Layout,
+    redirect: '/company',
+    children: [
+      {
+        path: 'detail',
+        component: () => import('@/views/company/CompanyDetail.vue'),
+        name: 'company-detail',
+        meta: { title: '公司信息' }
+      }
+    ]
+  },
+  {
+    path: '/contact-us',
+    component: Layout,
+    redirect: '/contact-us',
+    children: [
+      {
+        path: '/',
+        component: () => import('@/views/contact-us/ContactUs.vue'),
+        name: 'contact-us',
+        meta: { title: '联系方式' }
       }
     ]
   },
@@ -75,5 +101,5 @@ export const constantRoutes = [
  * @description 需要根据权限动态加载的路由
  */
 export const asyncRoutes = [
-  
+
 ];

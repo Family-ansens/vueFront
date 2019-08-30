@@ -6,7 +6,7 @@
       <el-col :xs="1" :sm="3" :lg="1">&nbsp;</el-col>
       <!-- 主 -->
       <el-col :xs="22" :sm="18" :lg="22">
-        <el-row>
+        <el-row :gutter="25">
           <el-col :xs="24" :sm="24" :lg="5">
             <group-list
               style="margin-bottom: 20px;"
@@ -15,8 +15,7 @@
               :onClickEven="groupListEven"
             />
           </el-col>
-          <el-col :xs="0" :sm="1" :lg="1">&nbsp;</el-col>
-          <el-col :xs="24" :sm="24" :lg="18">
+          <el-col :xs="24" :sm="24" :lg="19">
             <item
               class="item-wrapper"
               v-for="item in itemData"
@@ -33,10 +32,10 @@
     <!-- 翻页 -->
     <el-row>
       <el-col>
-        <!-- <el-pagination
+        <el-pagination
           layout="prev, pager, next"
           :total="1000"
-        /> -->
+        />
       </el-col>
     </el-row>
   </div>

@@ -16,14 +16,25 @@ import SvgIcon from 'vue-svgicon';
 import '@/icons';
 
 import './core';
+// 引入vue-amap 高德地图控件
+import VueAMap from 'vue-amap';
+Vue.use(VueAMap);
+// 初始化vue-amap
+VueAMap.initAMapApiLoader({
+  // 高德的key
+  key: 'YOUR_KEY',
+  // 插件集合
+  plugin: ['AMap.Autocomplete', 'AMap.PlaceSearch', 
+  'AMap.Scale', 'AMap.OverView', 'AMap.ToolBar', 
+  'AMap.MapType', 'AMap.PolyEditor', 'AMap.CircleEditor'],
+  // 高德 sdk 版本，默认为 1.4.4
+  v: '1.4.4'
+});
 
 Vue.config.productionTip = false;
 Vue.use(ElementUI, {
   i18n: (key: string, value: string) => i18n.t(key, value)
 });
-
-
-
 
 /**
  * 图标控件全局注册, 别名为svg-icon

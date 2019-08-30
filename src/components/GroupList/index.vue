@@ -12,7 +12,7 @@
         v-for="item in items"
         :key="item.id"
         :index="item.id"
-        @click="onClickEven"
+        @click="onClickEven(item)"
       >{{ item.label }}</el-menu-item>
     </el-menu>
   </el-scrollbar>
@@ -26,7 +26,7 @@ import { Vue, Component, Prop } from "vue-property-decorator";
 export default class GroupList extends Vue {
   @Prop({ required: true }) items!: any[];
   @Prop({ required: true, default: "" }) activeIndex!: string;
-  @Prop({ required: true }) onClickEven!: () => void;
+  @Prop({ required: true }) onClickEven!: (row: any) => void;
 }
 </script>
 

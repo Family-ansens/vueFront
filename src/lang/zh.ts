@@ -27,14 +27,25 @@ export default {
     qq: 'Q Q',
     weChat: '微信',
     phone: '电话',
-    email1: '邮箱1',
-    email2: '邮箱2',
+    email: '邮箱',
     weChatQRCode: '微信二维码',
   },
   products: {
     title: '产品',
   },
   cases: {
-    title: 'CASE',
+    title: '案例',
+  },
+  company: {
+    title: '公司信息',
+  },
+  contactUs: {
+    title: '联系方式',
+    ZHANGRUI: '张瑞 (销售经理)',
+    ZHANGJIANFENG: '张建峰 (技术总管)',
+    HEYING: '何颖 (业务员)',
+    company: '公司: 安平县优瑞丝网机械有限公司',
+    webSite: '网址',
+    address: '地址: 河北省衡水市安平县',
   }
 };

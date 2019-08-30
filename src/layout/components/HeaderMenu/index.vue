@@ -42,9 +42,9 @@ export default class HeaderMenu extends Vue {
     { bashUrl: "/dashboard", index: "dashboard", name: 'dashboard' },
     { bashUrl: "/product/list", index: "product-list", name: 'products' },
     { bashUrl: "/case/list", index: "case-list", name: 'cases' },
-    { bashUrl: "/company/list", index: "company-list", name: 'company' },
+    { bashUrl: "/company/detail", index: "company-detail", name: 'company' },
     { bashUrl: "/news/list", index: "news-list", name: 'news' },
-    { bashUrl: "/contactUs", index: "contactUs", name: 'contactUs' }
+    { bashUrl: "/contact-us", index: "contact-us", name: 'contactUs' }
   ];
 }
 </script>
