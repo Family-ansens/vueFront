@@ -12,7 +12,6 @@
                   <el-image
                     :src="item"
                     style="height: 200px; width: 100%;"
-                    :preview-src-list="imgList"
                     fit="contain"
                   />
                 </div>
@@ -66,11 +65,6 @@ export default class ProductDetail extends Vue {
     imgList: [""]
   };
 
-  private imgList = [
-    "http://www.puwiremesh.com:2000/file/img/2019831-14473fbb02654ab191daef947e77b464.jpg",
-    "http://www.puwiremesh.com:2000/file/img/2019831-b41455f447d74480b5eb8c4401dce2cf.jpg"
-  ];
-
   private relatedProducts = [
     {
       id: 0,
@@ -85,13 +79,11 @@ export default class ProductDetail extends Vue {
   }
 
   private created() {
-    console.info("created");
     this.onProductIdChange();
   }
 
   @Watch("productId")
   private onProductIdChange() {
-    console.info("productIdChange");
     ProductApi.productGetById(this.$route.query.id).then((resolve: any) => {
       this.productData = resolve;
     });

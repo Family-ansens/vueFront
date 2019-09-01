@@ -1,7 +1,11 @@
 import request from '@/utils/request';
 
 export const productGroups = () => {
-  return request.get("/product/product-groups"); // 获取商品分组列表   弃用
+  return request.get("/product/product-groups"); // 获取商品分组列表
+};
+
+export const productByGroups = (data: any) => {
+  return request.get("/product/products", data); // 根据分组获取产品列表
 };
 
 export const homeProductGroups = () => {
@@ -15,8 +19,6 @@ export const productGetById = (id: any) => {
 export const relateProductGetById = (id: any) => {
   return request.get(`/product/get-relate/${id}`); // 相关商品
 };
-
-
 
 export const productHotSaleProducts = () => {
   return request.get("/product/hot-sale-products"); // 获取热销商品列表

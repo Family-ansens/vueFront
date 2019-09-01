@@ -29,7 +29,7 @@ export default class GroupList extends Vue {
   @Prop({ required: true }) onClickEven!: (row: any) => void;
 
   created() {
-    console.info("group", this.activeIndex);
+    //
   }
 }
 </script>
