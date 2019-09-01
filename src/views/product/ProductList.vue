@@ -48,7 +48,7 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Provide } from "vue-property-decorator";
+import { Vue, Component } from "vue-property-decorator";
 import ModelTitle from "@/components/ModelTitle/index.vue";
 import GroupList from "@/components/GroupList/index.vue";
 import Item from "@/components/Item/index.vue";
