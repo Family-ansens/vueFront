@@ -532,7 +532,7 @@
     line-height: 32px;
     font-size: 14px;
     width: 5%;
-    color: #303133; }
+    color: #C0C4CC; }
   .el-date-editor .el-range__close-icon {
     font-size: 14px;
     color: #C0C4CC;
@@ -795,7 +795,7 @@
       cursor: not-allowed; }
   .el-picker-panel__icon-btn {
     font-size: 12px;
-    color: #303133;
+    color: #C0C4CC;
     border: 0;
     background: transparent;
     cursor: pointer;
@@ -1013,7 +1013,7 @@
     background: #F5F7FA;
     cursor: pointer; }
   .el-time-spinner__item.active:not(.disabled) {
-    color: #303133;
+    color: #C0C4CC;
     font-weight: bold; }
   .el-time-spinner__item.disabled {
     color: #C0C4CC;
@@ -1202,7 +1202,7 @@
     background-color: transparent;
     outline: none;
     font-size: 12px;
-    color: #303133; }
+    color: #C0C4CC; }
     .el-time-panel__btn.confirm {
       font-weight: 800;
       color: #409EFF; }
