@@ -39,7 +39,6 @@
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
 import MoreButton from "@/components/MoreButton/index.vue";
-import i18n from "@/lang";
 
 @Component({
   name: "FooterHotSale",

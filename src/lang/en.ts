@@ -32,6 +32,7 @@ export default {
   },
   products: {
     title: 'PRODUCT',
+    relatedProductsTitle: 'RELATED PRODUCTS'
   },
   cases: {
     title: 'CASE',
@@ -49,9 +50,14 @@ export default {
     address: 'Address: Anping County,Hengshui City,Hebei Province',
     onlineMessage: 'ONLINE MESSAGE',
     name: 'Your name',
-    phone: 'Your phone',
+    tel: 'Your phone',
     otherContact: 'Contact information of other',
-    context: 'What do you want to tell us',
-    send: 'SEND>'
+    content: 'What do you want to tell us',
+    send: 'SEND>',
+    findUs: 'WE ARE HERE',
+  },
+  systems: {
+    putSuccess: 'Success',
+    putError: 'Error'
   }
 };

@@ -9,11 +9,11 @@
     >
       <el-menu-item
         class="menu-item-wrapper"
-        v-for="item in items"
+        v-for="(item, index) in items"
         :key="item.id"
-        :index="item.id"
+        :index="index"
         @click="onClickEven(item)"
-      >{{ item.label }}</el-menu-item>
+      >{{ item.title }}</el-menu-item>
     </el-menu>
   </el-scrollbar>
 </template>
@@ -27,6 +27,10 @@ export default class GroupList extends Vue {
   @Prop({ required: true }) items!: any[];
   @Prop({ required: true, default: "" }) activeIndex!: string;
   @Prop({ required: true }) onClickEven!: (row: any) => void;
+
+  created() {
+    console.info("group", this.activeIndex);
+  }
 }
 </script>
 

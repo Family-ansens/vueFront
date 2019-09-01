@@ -1,130 +1,145 @@
 <template>
   <div class="main-wrapper">
-    <el-row style="background-color: #05101a; padding: 15px;">
+    <el-row>
       <el-col :xs="0" :sm="2" :lg="3">&nbsp;</el-col>
       <el-col :xs="24" :sm="20" :lg="18">
-        <model-title :showMoreButton="false" :title="$t('contactUs.title')" />
-        <!-- 文本介绍 -->
-        <el-row :gutter="20">
-          <el-col :xs="24" :sm="24" :lg="12">
-            <div class="contact-box first-box">
-              <span class="title">{{ $t('contactUs.ZHANGRUI') }}</span>
-              <br />
-              <span>{{ $t('footerContact.qq') }}: 552453110</span>
-              <br />
-              <span>{{ $t('footerContact.weChat') }}: 15612839018</span>
-              <br />
-              <span>{{ $t('footerContact.phone') }}: +86 15612839018</span>
-              <br />
-              <span>Skype: +86 15612839018</span>
-              <br />
-              <span>WhatsApp: +86 15612839018</span>
-              <br />
-              <span>{{ $t('footerContact.email') }}: 552453110@qq.com</span>
-            </div>
-            <!-- second-box -->
-            <div class="contact-box second-box">
-              <span class="title">{{ $t('contactUs.ZHANGJIANFENG') }}</span>
-              <br />
-              <span>{{ $t('footerContact.weChat') }}: 13831813004</span>
-              <br />
-              <span>{{ $t('footerContact.phone') }}: +86 15612831218</span>
-            </div>
-            <!-- third-box -->
-            <div class="contact-box">
-              <span class="title">{{ $t('contactUs.HEYING') }}</span>
-              <br />
-              <span>{{ $t('footerContact.qq') }}: 279052016</span>
-              <br />
-              <span>{{ $t('footerContact.weChat') }}: 13231868828</span>
-              <br />
-              <span>{{ $t('footerContact.phone') }}: +86 13231868828</span>
-              <br />
-              <span>Skype: +86 15612839018</span>
-              <br />
-              <span>WhatsApp: +86 13231868828</span>
-              <br />
-              <span>{{ $t('footerContact.email') }}: helenhewiremesh@gmail.com</span>
-            </div>
-          </el-col>
-          <el-col :xs="24" :sm="24" :lg="12">
-            <div class="contact-box first-box" style="margin-top: 15px;">
-              <span>{{ $t('contactUs.company') }}</span>
-              <br />
-              <span>{{ $t('contactUs.webSite') }}: puwiremesh.com</span>
-              <br />
-              <span>{{ $t('contactUs.address') }}</span>
-              <br />
-              <span>{{ $t('footerContact.email') }}: puwiremesh@gmail.com</span>
-              <br />
-            </div>
-            <!-- second-box -->
-            <div class="contact-box topRightContactBox second-box">
-              <svg-icon name="skype" color="#15ACE5" />
-              <svg-icon name="fackbook" color="#3C5A99" />
-              <svg-icon name="original-whatapp" color="#3EBE2A" />
-              <svg-icon name="youtube" color="#cc0002" />
-              <svg-icon name="优酷" color="#38CEFF #0B99FF #FF4A4A" />
-              <svg-icon name="推特" color="#0a71b0" />
-              <svg-icon name="领英" color="#008DC2" />
-              <svg-icon name="instagram" color="#D81E06" />
-              <svg-icon name="pinterest" color="#C02328" />
-            </div>
-          </el-col>
+        <el-row style="background-color: #05101a; padding: 15px; margin-bottom: 15px;">
+          <model-title :showMoreButton="false" :title="$t('contactUs.title')" />
+          <!-- 文本介绍 -->
+          <el-row :gutter="20">
+            <el-col :xs="24" :sm="24" :lg="12">
+              <div class="contact-box first-box">
+                <span class="title">{{ $t('contactUs.ZHANGRUI') }}</span>
+                <br />
+                <span>{{ $t('footerContact.qq') }}: 552453110</span>
+                <br />
+                <span>{{ $t('footerContact.weChat') }}: 15612839018</span>
+                <br />
+                <span>{{ $t('footerContact.phone') }}: +86 15612839018</span>
+                <br />
+                <span>Skype: +86 15612839018</span>
+                <br />
+                <span>WhatsApp: +86 15612839018</span>
+                <br />
+                <span>{{ $t('footerContact.email') }}: 552453110@qq.com</span>
+              </div>
+              <!-- second-box -->
+              <div class="contact-box second-box">
+                <span class="title">{{ $t('contactUs.ZHANGJIANFENG') }}</span>
+                <br />
+                <span>{{ $t('footerContact.weChat') }}: 13831813004</span>
+                <br />
+                <span>{{ $t('footerContact.phone') }}: +86 15612831218</span>
+              </div>
+              <!-- third-box -->
+              <div class="contact-box">
+                <span class="title">{{ $t('contactUs.HEYING') }}</span>
+                <br />
+                <span>{{ $t('footerContact.qq') }}: 279052016</span>
+                <br />
+                <span>{{ $t('footerContact.weChat') }}: 13231868828</span>
+                <br />
+                <span>{{ $t('footerContact.phone') }}: +86 13231868828</span>
+                <br />
+                <span>Skype: +86 15612839018</span>
+                <br />
+                <span>WhatsApp: +86 13231868828</span>
+                <br />
+                <span>{{ $t('footerContact.email') }}: helenhewiremesh@gmail.com</span>
+              </div>
+            </el-col>
+            <el-col :xs="24" :sm="24" :lg="12">
+              <div class="contact-box first-box" style="margin-top: 15px;">
+                <span>{{ $t('contactUs.company') }}</span>
+                <br />
+                <span>{{ $t('contactUs.webSite') }}: puwiremesh.com</span>
+                <br />
+                <span>{{ $t('contactUs.address') }}</span>
+                <br />
+                <span>{{ $t('footerContact.email') }}: puwiremesh@gmail.com</span>
+                <br />
+              </div>
+              <!-- second-box -->
+              <div class="contact-box topRightContactBox second-box">
+                <svg-icon name="skype" color="#15ACE5" />
+                <svg-icon name="fackbook" color="#3C5A99" />
+                <svg-icon name="original-whatapp" color="#3EBE2A" />
+                <svg-icon name="youtube" color="#cc0002" />
+                <svg-icon name="优酷" color="#38CEFF #0B99FF #FF4A4A" />
+                <svg-icon name="推特" color="#0a71b0" />
+                <svg-icon name="领英" color="#008DC2" />
+                <svg-icon name="instagram" color="#D81E06" />
+                <svg-icon name="pinterest" color="#C02328" />
+              </div>
+            </el-col>
+          </el-row>
+          <el-form
+            label-width="100px"
+            label-position="top"
+            ref="messageForm"
+            :model="messageFormData"
+            :rules="messageFormRules"
+            style="margin-bottom: 15px;"
+          >
+            <el-row :gutter="200">
+              <div class="online-message-title">
+                <span>{{ $t('contactUs.onlineMessage') }}</span>
+              </div>
+              <el-col :xs="24" :sm="24" :lg="12">
+                <el-form-item :label="$t('contactUs.name')" prop="name">
+                  <el-input v-model="messageFormData.name" maxlength="50" />
+                </el-form-item>
+                <el-form-item :label="$t('contactUs.tel')" prop="tel">
+                  <el-input v-model="messageFormData.tel" maxlength="50" />
+                </el-form-item>
+              </el-col>
+              <el-col :xs="24" :sm="24" :lg="12">
+                <el-form-item :label="$t('footerContact.email')" prop="email">
+                  <el-input v-model="messageFormData.email" maxlength="50" />
+                </el-form-item>
+                <el-form-item :label="$t('contactUs.otherContact')" prop="otherContact">
+                  <el-input v-model="messageFormData.otherContact" maxlength="50" />
+                </el-form-item>
+              </el-col>
+            </el-row>
+            <el-row>
+              <el-col>
+                <el-form-item :label="$t('contactUs.content')" prop="content">
+                  <el-input
+                    v-model="messageFormData.content"
+                    maxlength="500"
+                    type="textarea"
+                    :rows="5"
+                  />
+                </el-form-item>
+              </el-col>
+            </el-row>
+            <el-row>
+              <el-button
+                style="background-color: #1d678c; color: #fff; float: right;"
+                @click="onEvaluation"
+              >{{$t('contactUs.send')}}</el-button>
+            </el-row>
+          </el-form>
         </el-row>
-        <el-form
-          label-width="100px"
-          label-position="top"
-          ref="messageFormData"
-          :rules="messageFormRules"
-        >
-          <el-row :gutter="200">
-            <div class="online-message-title">
-              <span>{{ $t('contactUs.onlineMessage') }}</span>
-            </div>
-            <el-col :xs="24" :sm="24" :lg="12">
-              <el-form-item :label="$t('contactUs.name')" prop="name">
-                <el-input v-model="messageFormData.name" maxlength="50" />
-              </el-form-item>
-              <el-form-item :label="$t('contactUs.phone')" prop="phone">
-                <el-input v-model="messageFormData.phone" maxlength="50" />
-              </el-form-item>
-            </el-col>
-            <el-col :xs="24" :sm="24" :lg="12">
-              <el-form-item :label="$t('footerContact.email')" prop="email">
-                <el-input v-model="messageFormData.email" maxlength="50" />
-              </el-form-item>
-              <el-form-item :label="$t('contactUs.otherContact')" prop="otherContact">
-                <el-input v-model="messageFormData.otherContact" maxlength="50" />
-              </el-form-item>
-            </el-col>
-          </el-row>
-          <el-row>
-            <el-col>
-              <el-form-item :label="$t('contactUs.context')" prop="context">
-                <el-input
-                  v-model="messageFormData.context"
-                  maxlength="500"
-                  type="textarea"
-                  :rows="5"
-                />
-              </el-form-item>
-            </el-col>
-          </el-row>
-          <el-row>
-            <el-button
-              style="background-color: #1d678c; color: #fff; float: right;"
-            >{{$t('contactUs.send')}}</el-button>
-          </el-row>
-        </el-form>
+        <!-- map -->
+        <el-row>
+          <div class="online-message-title">
+            <span>{{ $t('contactUs.findUs') }}</span>
+          </div>
+          <el-amap
+            vid="amapDemo"
+            lang="zh_en"
+            :center="amapData.center"
+            :zoom="amapData.zoom"
+            :map-manager="amapData.amapManager"
+            class="amap-wrapper"
+          >
+            <el-amap-marker vid="component-marker" :position="amapData.center" />
+          </el-amap>
+        </el-row>
       </el-col>
       <el-col :xs="0" :sm="2" :lg="3">&nbsp;</el-col>
-    </el-row>
-    <!-- map -->
-    <el-row>
-      <el-amap vid="amapDemo" :zoom="zoom" :center="center">
-        <el-amap-marker v-for="marker in markers" :key="marker.id" :position="marker.position"></el-amap-marker>
-      </el-amap>
     </el-row>
   </div>
 </template>
@@ -132,29 +147,45 @@
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
 import ModelTitle from "@/components/ModelTitle/index.vue";
+import * as ContactUsApi from "@/api/peacock/contactUs";
+import { AMapManager } from "vue-amap";
 @Component({
   name: "ContactUs",
   components: {
-    ModelTitle,
+    ModelTitle
   }
 })
 export default class ContactUs extends Vue {
   private messageFormData = {
     name: "",
-    phone: "",
+    tel: "",
     email: "",
     otherContact: "",
-    context: ""
+    content: ""
   };
 
   private messageFormRules = {
     name: [{ required: true, trigger: "blur" }],
-    phone: [{ required: true, trigger: "blur" }],
+    tel: [{ required: true, trigger: "blur" }],
     email: [{ required: true, trigger: "blur" }],
-    context: [{ required: true, trigger: "blur" }]
+    content: [{ required: true, trigger: "blur" }]
   };
 
-  private MAP_KEY = 'a594a0e89a9c860c5b177ca23aa97d90';
+  private amapData = {
+    zoom: 14,
+    center: [115.549235, 38.209193],
+    amapManager: {}
+  };
+
+  private onEvaluation() {
+    (this.$refs.messageForm as any).validate((valid: any) => {
+      if (valid) {
+        ContactUsApi.evaluation(this.messageFormData).then(resolve => {
+          this.$message.success(this.$t('systems.putSuccess').toString());
+        });
+      }
+    });
+  }
 }
 </script>
 
@@ -216,7 +247,7 @@ export default class ContactUs extends Vue {
   }
 }
 
-.baidumap-wrapper {
+.amap-wrapper {
   height: 500px;
 }
 </style>

@@ -32,6 +32,7 @@ export default {
   },
   products: {
     title: '产品',
+    relatedProductsTitle: '相关产品'
   },
   cases: {
     title: '案例',
@@ -47,5 +48,16 @@ export default {
     company: '公司: 安平县优瑞丝网机械有限公司',
     webSite: '网址',
     address: '地址: 河北省衡水市安平县',
+    onlineMessage: '在线留言',
+    name: '姓名',
+    tel: '联系方式',
+    otherContact: '其他平台联系方式',
+    content: '内容',
+    send: '留言>',
+    findUs: '找到我们',
+  },
+  systems: {
+    putSuccess: '操作成功',
+    putError: '操作失败'
   }
 };

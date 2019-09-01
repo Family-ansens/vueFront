@@ -18,11 +18,13 @@
           <el-col :xs="24" :sm="24" :lg="19">
             <item
               class="item-wrapper"
-              v-for="item in itemData"
-              :key="item.productId"
-              :picUrl="introductUrl"
-              :title="item.title"
-              :context="item.context"
+              v-for="item in productsItemData"
+              :key="item.id"
+              :id="item.id"
+              bashPath="/product/detail"
+              :picUrl="item.imgUrl"
+              :title="item.name"
+              :context="item.introduction"
             />
           </el-col>
         </el-row>
@@ -32,11 +34,7 @@
     <!-- 翻页 -->
     <el-row>
       <el-col>
-        <el-pagination
-          style="text-align: center;"
-          layout="prev, pager, next"
-          :total="1000"
-        />
+        <el-pagination style="text-align: center;" layout="prev, pager, next" :total="1000" />
       </el-col>
     </el-row>
   </div>
@@ -48,71 +46,39 @@ import ModelTitle from "@/components/ModelTitle/index.vue";
 import GroupList from "@/components/GroupList/index.vue";
 import Item from "@/components/Item/index.vue";
 import HeaderCarousel from "@/components/HeaderCarousel/index.vue";
+import * as ProductApi from "@/api/peacock/product";
 @Component({
   name: "ProductList",
   components: {
     ModelTitle,
     GroupList,
     Item,
-    HeaderCarousel,
+    HeaderCarousel
   }
 })
 export default class ProductList extends Vue {
   private introductUrl = require("@/assets/img/test.png");
-  private itemData = [
+  private productsItemData = [
     {
-      id: 1,
-      title: "标题标题标题标题",
-      context:
-        "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
-    },
-    {
-      id: 2,
-      title: "标题标题标题标题",
-      context:
-        "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
-    },
-    {
-      id: 3,
-      title: "标题标题标题标题",
-      context:
-        "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
-    },
-    {
-      id: 4,
-      title: "标题标题标题标题",
-      context:
-        "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
-    },
-    {
-      id: 5,
-      title: "标题标题标题标题",
-      context:
-        "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
-    },
-    {
-      id: 6,
-      title: "标题标题标题标题",
-      context:
-        "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
+      id: 0,
+      name: "",
+      introduction: "",
+      imgUrl: ""
     }
   ];
 
-  private activeIndex = 1;
-  private groupListData = [
-    { label: "test1", id: 1 },
-    { label: "test2", id: 2 },
-    { label: "test3", id: 3 },
-    { label: "test4", id: 4 },
-    { label: "test5", id: 5 },
-    { label: "test6", id: 6 },
-    { label: "test7", id: 7 },
-    { label: "test8", id: 8 },
-    { label: "test9", id: 9 }
-  ];
+  private activeIndex = 0;
+  private groupListData = [];
 
-  private groupListEven() {
-    console.info("onClick");
+  created() {
+    ProductApi.homeProductGroups().then((resolve: any) => {
+      this.groupListData = resolve;
+      this.productsItemData = resolve[0].products;
+    });
+  }
+
+  private groupListEven(row: any) {
+    this.productsItemData = row.products;
   }
 }
 </script>

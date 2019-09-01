@@ -33,7 +33,7 @@
               <svg-icon name="language" class="svg-icon" color="#bbc7cf"/>
               <span style="color: #bbc7cf;">{{ $t('components.languageButton') }}</span>
               <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item :disabled="language==='zh'" command="zh">中文</el-dropdown-item>
+                <el-dropdown-item :disabled="language==='zhCn'" command="zhCn">中文</el-dropdown-item>
                 <el-dropdown-item :disabled="language==='en'" command="en">English</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>

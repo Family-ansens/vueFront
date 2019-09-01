@@ -1,3 +1,5 @@
+import contactUs from '@/views/contact-us/ContactUs.vue';
+
 /*
  * meta 可配置参数
  * @param {boolean} icon 页面icon
@@ -32,6 +34,12 @@ export const constantRoutes = [
         component: () => import('@/views/product/ProductList.vue'),
         name: 'product-list',
         meta: { title: '产品列表' }
+      },
+      {
+        path: 'detail',
+        component: () => import('@/views/product/ProductDetail.vue'),
+        name: 'product-detail',
+        meta: { title: '产品查询' }
       }
     ]
   },
@@ -68,7 +76,7 @@ export const constantRoutes = [
     children: [
       {
         path: '/',
-        component: () => import('@/views/contact-us/ContactUs.vue'),
+        component: contactUs,
         name: 'contact-us',
         meta: { title: '联系方式' }
       }
