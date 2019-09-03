@@ -3,15 +3,11 @@
     <el-row>
       <el-col :xs="24" :sm="24" :lg="12">
         <el-row>
-          <el-col :xs="0.5" :sm="1" :lg="3">
-            &nbsp;
-          </el-col >
+          <el-col :xs="0.5" :sm="1" :lg="3">&nbsp;</el-col>
           <el-col :xs="23" :sm="22" :lg="20">
-            <el-image class="logo" :src="language === 'zhCn'? logoUrlZH : logoUrlEN"></el-image>
+            <el-image class="logo" :src="logoImageUrl"></el-image>
           </el-col>
-          <el-col :xs="0.5" :sm="1" :lg="1">
-            &nbsp;
-          </el-col >
+          <el-col :xs="0.5" :sm="1" :lg="1">&nbsp;</el-col>
         </el-row>
       </el-col>
       <el-col :xs="24" :sm="24" :lg="12">
@@ -30,7 +26,7 @@
           </el-col>
           <el-col class="topContactBox" :xs="12" :sm="12" :lg="5">
             <el-dropdown trigger="click" @command="handleSetLanguage">
-              <svg-icon name="language" class="svg-icon" color="#bbc7cf"/>
+              <svg-icon name="language" class="svg-icon" color="#bbc7cf" />
               <span style="color: #bbc7cf;">{{ $t('components.languageButton') }}</span>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item :disabled="language==='zhCn'" command="zhCn">中文</el-dropdown-item>
@@ -66,7 +62,18 @@ import { Component, Vue } from "vue-property-decorator";
 })
 export default class HeaderTitle extends Vue {
   private logoUrlEN = require("@/assets/img/logo-en.png");
-  private logoUrlZH = require("@/assets/img/logo-zh.png");
+  private logoUrlZHCN = require("@/assets/img/logo-zhcn.png");
+
+  get logoImageUrl() {
+    switch (this.language) {
+      case "en":
+        return this.logoUrlEN;
+      case "zhCn":
+        return this.logoUrlZHCN;
+      default:
+        return this.logoUrlEN;
+    }
+  }
 
   get language() {
     return this.$utils.common.language;
