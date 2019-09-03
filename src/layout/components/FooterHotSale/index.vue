@@ -13,7 +13,7 @@
             <router-link tag="div" :to="'/product/detail?id='+item.productId">
               <el-row>
                 <el-col :span="12">
-                  <el-image :src="item.imgUrl" style="width: 100%;" fit="cover" />
+                  <el-image :src="item.imgUrl" style="width: 100%;" fit="cover" lazy />
                 </el-col>
                 <el-col :span="12">
                   <div class="text-box">

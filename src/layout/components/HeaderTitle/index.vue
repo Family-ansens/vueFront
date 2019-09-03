@@ -5,7 +5,7 @@
         <el-row>
           <el-col :xs="0.5" :sm="1" :lg="3">&nbsp;</el-col>
           <el-col :xs="23" :sm="22" :lg="20">
-            <el-image class="logo" :src="logoImageUrl"></el-image>
+            <el-image class="logo" :src="logoImageUrl" lazy ></el-image>
           </el-col>
           <el-col :xs="0.5" :sm="1" :lg="1">&nbsp;</el-col>
         </el-row>

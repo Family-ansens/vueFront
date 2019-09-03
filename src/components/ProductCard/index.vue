@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-image class="pic-main" :src="picUrl"></el-image>
+    <el-image class="pic-main" :src="picUrl" lazy ></el-image>
     <div class="title-box">
       <span>{{ title }}</span>
     </div>

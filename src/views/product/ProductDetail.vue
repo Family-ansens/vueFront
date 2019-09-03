@@ -13,6 +13,7 @@
                     :src="item"
                     style="height: 200px; width: 100%;"
                     fit="contain"
+                    lazy
                   />
                 </div>
               </el-carousel-item>
@@ -30,7 +31,7 @@
               <el-carousel-item v-for="item in relatedProducts" :key="item">
                 <router-link :tag="div" :to="'/product/detail?id='+item.id">
                   <div style="text-align: center;">
-                    <el-image :src="item.imgUrl" style="height: 150px; width: 100%;" fit="contain" />
+                    <el-image :src="item.imgUrl" style="height: 150px; width: 100%;" fit="contain" lazy />
                   </div>
                 </router-link>
               </el-carousel-item>

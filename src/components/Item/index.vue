@@ -8,7 +8,7 @@
       </el-row>
     <el-row :gutter="17">
       <el-col :span="9">
-        <el-image class="image-wrapper" fit="cover" :src="picUrl" />
+        <el-image class="image-wrapper" fit="cover" :src="picUrl" lazy />
       </el-col>
       <el-col :span="15">
         <div class="context-box-wrapper">

@@ -9,7 +9,7 @@
             <el-carousel type="card" height="200px">
               <el-carousel-item v-for="(item, index) in caseData.imgList" :key="index">
                 <div style="text-align: center;">
-                  <el-image :src="item" style="height: 200px; width: 100%;" fit="contain" />
+                  <el-image :src="item" style="height: 200px; width: 100%;" fit="contain" lazy />
                 </div>
               </el-carousel-item>
             </el-carousel>
@@ -30,7 +30,7 @@
               <el-carousel-item v-for="(item, index) in caseData.relationProducts" :key="index">
                 <router-link :tag="div" :to="'/product/detail?id='+item.productId">
                   <div style="text-align: center;">
-                    <el-image :src="item.imgUrl" style="height: 150px; width: 100%;" fit="contain" />
+                    <el-image :src="item.imgUrl" style="height: 150px; width: 100%;" fit="contain" lazy />
                   </div>
                 </router-link>
               </el-carousel-item>
