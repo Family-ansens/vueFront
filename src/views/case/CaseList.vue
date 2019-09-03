@@ -1,7 +1,7 @@
 <template>
   <div class="main-wrapper">
     <header-carousel />
-    <model-title :showMoreButton="false" :title="$t('cases.title')" />
+    <model-title :showMoreButton="false" :title="$t('cases.title')" size="large" />
     <el-row>
       <el-col :xs="1" :sm="3" :lg="1">&nbsp;</el-col>
       <!-- 主 -->
@@ -18,11 +18,13 @@
           <el-col :xs="24" :sm="24" :lg="19">
             <item
               class="item-wrapper"
-              v-for="item in itemData"
-              :key="item.productId"
-              :picUrl="introductUrl"
-              :title="item.title"
-              :context="item.context"
+              v-for="(item, index) in casesItemData.item"
+              :key="index"
+              :picUrl="item.imgUrl"
+              :id="item.id"
+              :bashPath="'/case/detail?id=' + item.id"
+              :title="item.name"
+              :context="item.introduction"
             />
           </el-col>
         </el-row>
@@ -33,8 +35,12 @@
     <el-row>
       <el-col>
         <el-pagination
+          style="text-align: center;"
           layout="prev, pager, next"
-          :total="1000"
+          :total="casesItemData.count"
+          :page-size="searchData.size"
+          :current-page="searchData.page"
+          @current-change="onPageIndexChange"
         />
       </el-col>
     </el-row>
@@ -47,6 +53,7 @@ import ModelTitle from "@/components/ModelTitle/index.vue";
 import GroupList from "@/components/GroupList/index.vue";
 import Item from "@/components/Item/index.vue";
 import HeaderCarousel from "@/components/HeaderCarousel/index.vue";
+import * as CasesApi from "@/api/peacock/cases";
 @Component({
   name: "CaseList",
   components: {
@@ -57,61 +64,57 @@ import HeaderCarousel from "@/components/HeaderCarousel/index.vue";
   }
 })
 export default class CaseList extends Vue {
-  private introductUrl = require("@/assets/img/test.png");
-  private itemData = [
+  private casesItemData = {
+    item: [
+      {
+        id: 0,
+        name: "",
+        introduction: "",
+        imgUrl: ""
+      }
+    ],
+    count: 0
+  };
+  
+  private activeIndex = 0;
+  private groupListData = [
     {
-      id: 1,
-      title: "标题标题标题标题",
-      context:
-        "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
-    },
-    {
-      id: 2,
-      title: "标题标题标题标题",
-      context:
-        "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
-    },
-    {
-      id: 3,
-      title: "标题标题标题标题",
-      context:
-        "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
-    },
-    {
-      id: 4,
-      title: "标题标题标题标题",
-      context:
-        "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
-    },
-    {
-      id: 5,
-      title: "标题标题标题标题",
-      context:
-        "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
-    },
-    {
-      id: 6,
-      title: "标题标题标题标题",
-      context:
-        "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
+      id: 0,
+      title: "",
+      code: ""
     }
   ];
 
-  private activeIndex = 1;
-  private groupListData = [
-    { label: "test1", id: 1 },
-    { label: "test2", id: 2 },
-    { label: "test3", id: 3 },
-    { label: "test4", id: 4 },
-    { label: "test5", id: 5 },
-    { label: "test6", id: 6 },
-    { label: "test7", id: 7 },
-    { label: "test8", id: 8 },
-    { label: "test9", id: 9 }
-  ];
+  private searchData = {
+    groupId: 0,
+    size: 10,
+    page: 1
+  };
 
-  private groupListEven() {
-    console.info("onClick");
+  created() {
+    CasesApi.exampleGroups().then((resolve: any) => {
+      this.groupListData = resolve.rows;
+      this.searchData.groupId = this.groupListData[0].id;
+      this.getCaseByGroup(this.searchData);
+    });
+  }
+
+  private getCaseByGroup(searchData: any) {
+    CasesApi.getExampleByGroupId(searchData).then((resolve: any) => {
+      this.casesItemData.item = resolve.rows;
+      this.casesItemData.count = resolve.count;
+    });
+  }
+
+  private groupListEven(row: any) {
+    console.info(row);
+    this.searchData.groupId = row.id;
+    this.searchData.page = 1;
+    this.getCaseByGroup(this.searchData);
+  }
+  private async onPageIndexChange(page: number) {
+    this.searchData.page = page;
+    this.getCaseByGroup(this.searchData);
   }
 }
 </script>

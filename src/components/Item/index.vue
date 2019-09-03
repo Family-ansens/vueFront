@@ -2,7 +2,7 @@
   <div class="components-wrapper">
     
       <el-row class="title-wrapper">
-        <router-link :to="bashUrl">
+        <router-link :to="bashPath">
           <span>{{ title }}</span>
         </router-link>
       </el-row>
@@ -30,11 +30,7 @@ export default class Item extends Vue {
   @Prop({ required: true }) picUrl!: string;
   @Prop({ required: true }) context!: string;
   @Prop({ required: true }) bashPath!: string;
-
-  private bashUrl = {
-    path: this.bashPath,
-    query: { id: this.id }
-  };
+  
 }
 </script>
 
@@ -42,7 +38,7 @@ export default class Item extends Vue {
 .components-wrapper {
   background-color: #003d5c;
   padding: 10px 17px 17px 17px;
-  height: 155px;
+  height: 180px;
   letter-spacing: 2px;
 
   .title-wrapper {

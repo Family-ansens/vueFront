@@ -40,6 +40,9 @@ export default {
   company: {
     title: 'COMPANY',
   },
+  news: {
+    title: 'NEWS',
+  },
   contactUs: {
     title: 'CONTACT US',
     ZHANGRUI: 'ZHANG RUI (SALES MANAGER)',

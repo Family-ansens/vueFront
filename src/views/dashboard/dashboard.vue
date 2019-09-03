@@ -4,7 +4,7 @@
     <el-row>
       <div class="company-introduction">
         <header-carousel />
-        <model-title :showMoreButton="false" :title="$t('modelTitle.company')" />
+        <model-title :showMoreButton="false" :title="$t('modelTitle.company')" size="large" />
         <el-row>
           <el-col :xs="24" :sm="24" :lg="15" style="padding: 15px;">
             <el-image class="synopsis-main-pic" :src="introductUrl" fit="contain" />
@@ -140,12 +140,13 @@
       <div>
         <model-title :showMoreButton="true" :title="$t('modelTitle.news')" url="/" />
       </div>
-      <el-row>
+      <el-row :gutter="10">
         <el-col :xs="24" :sm="24" :lg="8">
           <div>
             <news-card
               class="news-card-wrapper"
               :picUrl="introductUrl"
+              size="small"
               :title="data.title"
               :context="data.context"
               :date="data.date"
@@ -157,6 +158,7 @@
             <news-card
               class="news-card-wrapper"
               :picUrl="introductUrl"
+              size="small"
               :title="data.title"
               :context="data.context"
               :date="data.date"
@@ -168,6 +170,7 @@
             <news-card
               class="news-card-wrapper"
               :picUrl="introductUrl"
+              size="small"
               :title="data.title"
               :context="data.context"
               :date="data.date"
@@ -175,12 +178,13 @@
           </div>
         </el-col>
       </el-row>
-      <el-row style="margin-top: 35px;">
+      <el-row style="margin-top: 35px;" :gutter="10">
         <el-col :xs="24" :sm="24" :lg="8">
           <div>
             <news-card
               class="news-card-wrapper"
               :picUrl="introductUrl"
+              size="small"
               :title="data.title"
               :context="data.context"
               :date="data.date"
@@ -192,6 +196,7 @@
             <news-card
               class="news-card-wrapper"
               :picUrl="introductUrl"
+              size="small"
               :title="data.title"
               :context="data.context"
               :date="data.date"
@@ -203,6 +208,7 @@
             <news-card
               class="news-card-wrapper"
               :picUrl="introductUrl"
+              size="small"
               :title="data.title"
               :context="data.context"
               :date="data.date"

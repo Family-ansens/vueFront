@@ -1,7 +1,7 @@
 <template>
   <div class="main-wrapper">
     <header-carousel />
-    <model-title :showMoreButton="false" :title="$t('products.title')" />
+    <model-title :showMoreButton="false" :title="$t('products.title')" size="large" />
     <el-row>
       <el-col :xs="1" :sm="3" :lg="1">&nbsp;</el-col>
       <!-- 主 -->
@@ -21,7 +21,7 @@
               v-for="item in productsItemData.item"
               :key="item.id"
               :id="item.id"
-              bashPath="/product/detail"
+              :bashPath="'/product/detail?id=' + item.id"
               :picUrl="item.imgUrl"
               :title="item.name"
               :context="item.introduction"
@@ -64,7 +64,6 @@ import * as ProductApi from "@/api/peacock/product";
   }
 })
 export default class ProductList extends Vue {
-  private introductUrl = require("@/assets/img/test.png");
   private productsItemData = {
     item: [
       {
@@ -78,13 +77,7 @@ export default class ProductList extends Vue {
   };
 
   private activeIndex = 0;
-  private groupListData = [
-    {
-      id: 0,
-      title: "",
-      code: ""
-    }
-  ];
+  private groupListData = new Array<any>();
 
   private searchData = {
     groupId: 0,

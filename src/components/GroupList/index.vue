@@ -1,5 +1,5 @@
 <template>
-  <el-scrollbar wrap-class="scrollbar-wrapper" style="height: 504px;">
+  <el-scrollbar wrap-class="scrollbar-wrapper" style="height: 280px;">
     <el-menu
       :default-active="activeIndex"
       background-color="#081726"

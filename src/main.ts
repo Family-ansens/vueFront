@@ -22,7 +22,7 @@ Vue.use(VueAMap);
 // 初始化vue-amap
 VueAMap.initAMapApiLoader({
   // 高德的key
-  key: 'YOUR_KEY',
+  key: 'a594a0e89a9c860c5b177ca23aa97d90',
   // 插件集合
   plugin: ['AMap.Autocomplete', 'AMap.PlaceSearch', 
   'AMap.Scale', 'AMap.OverView', 'AMap.ToolBar', 

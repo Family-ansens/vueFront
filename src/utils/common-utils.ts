@@ -13,13 +13,14 @@ interface ICommomUtil {
   language: string;
   getParams(url: string): any;
   hasKey(obj: any, key: string | number): number | boolean;
-  formatDate(datetime: string | Date): string;
+  formatDate(datetime: string | Date, expression: string): string;
   verifyPhone(phone: number | string): any;
 }
 const languageKey = "langage";
 class CommonUtil implements ICommomUtil {
   get language() {
-    return cookie.get(languageKey) as string;
+    let language = cookie.get(languageKey) as string;
+    return language ? language : 'en';
   }
 
   set language(language: string) {

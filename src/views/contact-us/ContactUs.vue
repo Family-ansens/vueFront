@@ -4,7 +4,7 @@
       <el-col :xs="0" :sm="2" :lg="3">&nbsp;</el-col>
       <el-col :xs="24" :sm="20" :lg="18">
         <el-row style="background-color: #05101a; padding: 15px; margin-bottom: 15px;">
-          <model-title :showMoreButton="false" :title="$t('contactUs.title')" />
+          <model-title :showMoreButton="false" :title="$t('contactUs.title')" size="large"/>
           <!-- 文本介绍 -->
           <el-row :gutter="20">
             <el-col :xs="24" :sm="24" :lg="12">

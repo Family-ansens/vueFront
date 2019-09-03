@@ -4,16 +4,12 @@
       <el-col :xs="0" :sm="2" :lg="3">&nbsp;</el-col>
       <el-col :xs="24" :sm="20" :lg="18">
         <el-row>
-          <div style="background-color: #171f2a; padding: 15px;">
-            <model-title size="large" :showMoreButton="false" :title="productData.name" />
+          <div style="padding: 15px;">
+            <model-title size="large" :showMoreButton="false" :title="caseData.name" />
             <el-carousel type="card" height="200px">
-              <el-carousel-item v-for="(item, index) in productData.imgList" :key="index">
+              <el-carousel-item v-for="(item, index) in caseData.imgList" :key="index">
                 <div style="text-align: center;">
-                  <el-image
-                    :src="item"
-                    style="height: 200px; width: 100%;"
-                    fit="contain"
-                  />
+                  <el-image :src="item" style="height: 200px; width: 100%;" fit="contain" />
                 </div>
               </el-carousel-item>
             </el-carousel>
@@ -21,14 +17,18 @@
         </el-row>
         <el-row>
           <!-- 富文本 -->
-          <content-box :content="productData.desc" />
+          <content-box :content="caseData.desc" />
         </el-row>
         <el-row>
           <div style="background-color: #171f2a;">
-              <model-title size="small" :showMoreButton="false" :title="$t('products.relatedProductsTitle')" />
+            <model-title
+              size="small"
+              :showMoreButton="false"
+              :title="$t('products.relatedProductsTitle')"
+            />
             <el-carousel type="card" height="150px">
-              <el-carousel-item v-for="item in relatedProducts" :key="item">
-                <router-link :tag="div" :to="'/product/detail?id='+item.id">
+              <el-carousel-item v-for="(item, index) in caseData.relationProducts" :key="index">
+                <router-link :tag="div" :to="'/product/detail?id='+item.productId">
                   <div style="text-align: center;">
                     <el-image :src="item.imgUrl" style="height: 150px; width: 100%;" fit="contain" />
                   </div>
@@ -47,7 +47,7 @@
 import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 import ModelTitle from "@/components/ModelTitle/index.vue";
 import ContentBox from "@/components/ContentBox/index.vue";
-import * as ProductApi from "@/api/peacock/product";
+import * as CasesApi from "@/api/peacock/cases";
 @Component({
   name: "ProductDetail",
   components: {
@@ -56,41 +56,34 @@ import * as ProductApi from "@/api/peacock/product";
   }
 })
 export default class ProductDetail extends Vue {
-  private productData = {
+  private caseData = {
     id: 0,
     name: "",
     desc: "",
-    imgList: [""]
+    imgList: [""],
+    introduction: "",
+    relationProducts: [
+      {
+        productId: 0,
+        imgUrl: ""
+      }
+    ],
+    imgUrl: "" // 不使用
   };
 
-  private relatedProducts = [
-    {
-      id: 0,
-      name: "",
-      imgUrl: "",
-      introduction: ""
-    }
-  ];
-
-  get productId() {
+  get caseId() {
     return this.$route.query.id;
   }
 
   private created() {
-    this.onProductIdChange();
+    this.onCaseIdChange();
   }
 
-  @Watch("productId")
-  private onProductIdChange() {
-    ProductApi.productGetById(this.$route.query.id).then((resolve: any) => {
-      this.productData = resolve;
+  @Watch("caseId")
+  private onCaseIdChange() {
+    CasesApi.getExampleById(this.$route.query.id).then((resolve: any) => {
+      this.caseData = resolve;
     });
-
-    ProductApi.relateProductGetById(this.$route.query.id).then(
-      (resolve: any) => {
-        this.relatedProducts = resolve;
-      }
-    );
   }
 }
 </script>

@@ -40,6 +40,9 @@ export default {
   company: {
     title: '公司信息',
   },
+  news: {
+    title: '最新资讯',
+  },
   contactUs: {
     title: '联系方式',
     ZHANGRUI: '张瑞 (销售经理)',

@@ -7,7 +7,7 @@
             &nbsp;
           </el-col >
           <el-col :xs="23" :sm="22" :lg="20">
-            <el-image class="logo" :src="language === 'en'? logoUrlEN : logoUrlZH"></el-image>
+            <el-image class="logo" :src="language === 'zhCn'? logoUrlZH : logoUrlEN"></el-image>
           </el-col>
           <el-col :xs="0.5" :sm="1" :lg="1">
             &nbsp;

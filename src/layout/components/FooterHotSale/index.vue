@@ -1,18 +1,6 @@
 <template>
   <div style="background-color: #05101a;">
-    <el-row class="footer-hot-sale-box">
-      <el-col :xs="0" :sm="8" :lg="8">
-        &nbsp;
-      </el-col>
-      <el-col :xs="24" :sm="8" :lg="8">
-        <div class="title">
-          <span>{{ $t('modelTitle.hotSale') }}</span>
-        </div>
-      </el-col>
-      <el-col :xs="0" :sm="8" :lg="8">
-        <more-button class="more-button" url="/product/list" />
-      </el-col>
-    </el-row>
+    <model-title :showMoreButton="true" :title="$t('modelTitle.hotSale')" size="small" url="/product/list"/>
     <el-row>
       <div>
         <el-carousel type="card" height="200px">
@@ -40,17 +28,17 @@
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import MoreButton from "@/components/MoreButton/index.vue";
+import ModelTitle from "@/components/ModelTitle/index.vue";
+
 import * as ProductApi from "@/api/peacock/product";
 
 @Component({
   name: "FooterHotSale",
   components: {
-    MoreButton,
+    ModelTitle,
   }
 })
 export default class FooterHotSale extends Vue {
-  private product1Url = require("@/assets/img/product/product1.png");
 
   private productList = [{
     imgUrl: "",

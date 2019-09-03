@@ -53,6 +53,12 @@ export const constantRoutes = [
         component: () => import('@/views/case/CaseList.vue'),
         name: 'case-list',
         meta: { title: '案例列表' }
+      },
+      {
+        path: 'detail',
+        component: () => import('@/views/case/CaseDetail.vue'),
+        name: 'case-detail',
+        meta: { title: '案例查询' }
       }
     ]
   },
@@ -66,6 +72,25 @@ export const constantRoutes = [
         component: () => import('@/views/company/CompanyDetail.vue'),
         name: 'company-detail',
         meta: { title: '公司信息' }
+      }
+    ]
+  },
+  {
+    path: '/news',
+    component: Layout,
+    redirect: '/news',
+    children: [
+      {
+        path: 'list',
+        component: () => import('@/views/news/NewsList.vue'),
+        name: 'news-list',
+        meta: { title: '最新资讯' }
+      },
+      {
+        path: 'detail',
+        component: () => import('@/views/news/NewsDetail.vue'),
+        name: 'news-detail',
+        meta: { title: '最新资讯' }
       }
     ]
   },
