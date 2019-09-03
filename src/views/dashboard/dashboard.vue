@@ -137,85 +137,7 @@
 
     <!-- 公司动态 -->
     <el-row style="margin-bottom: 30px;">
-      <div>
-        <model-title :showMoreButton="true" :title="$t('modelTitle.news')" url="/" />
-      </div>
-      <el-row :gutter="10">
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div>
-            <news-card
-              class="news-card-wrapper"
-              :picUrl="introductUrl"
-              size="small"
-              :title="data.title"
-              :context="data.context"
-              :date="data.date"
-            />
-          </div>
-        </el-col>
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div>
-            <news-card
-              class="news-card-wrapper"
-              :picUrl="introductUrl"
-              size="small"
-              :title="data.title"
-              :context="data.context"
-              :date="data.date"
-            />
-          </div>
-        </el-col>
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div>
-            <news-card
-              class="news-card-wrapper"
-              :picUrl="introductUrl"
-              size="small"
-              :title="data.title"
-              :context="data.context"
-              :date="data.date"
-            />
-          </div>
-        </el-col>
-      </el-row>
-      <el-row style="margin-top: 35px;" :gutter="10">
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div>
-            <news-card
-              class="news-card-wrapper"
-              :picUrl="introductUrl"
-              size="small"
-              :title="data.title"
-              :context="data.context"
-              :date="data.date"
-            />
-          </div>
-        </el-col>
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div>
-            <news-card
-              class="news-card-wrapper"
-              :picUrl="introductUrl"
-              size="small"
-              :title="data.title"
-              :context="data.context"
-              :date="data.date"
-            />
-          </div>
-        </el-col>
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div>
-            <news-card
-              class="news-card-wrapper"
-              :picUrl="introductUrl"
-              size="small"
-              :title="data.title"
-              :context="data.context"
-              :date="data.date"
-            />
-          </div>
-        </el-col>
-      </el-row>
+      <news-card-group />
     </el-row>
   </div>
 </template>
@@ -223,7 +145,7 @@
 <script lang="ts">
 import ModelTitle from "@/components/ModelTitle/index.vue";
 import ProductCard from "@/components/ProductCard/index.vue";
-import NewsCard from "@/components/NewsCard/index.vue";
+import NewsCardGroup from "@/components/NewsCard/index.vue";
 import HeaderCarousel from "@/components/HeaderCarousel/index.vue";
 import { Vue, Component } from "vue-property-decorator";
 
@@ -231,7 +153,7 @@ import { Vue, Component } from "vue-property-decorator";
   components: {
     ModelTitle,
     ProductCard,
-    NewsCard,
+    NewsCardGroup,
     HeaderCarousel
   }
 })

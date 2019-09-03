@@ -8,7 +8,7 @@
       <el-col :xs="22" :sm="18" :lg="22">
         <el-row>
           <el-col>
-            <news-card
+            <news-card-item
               v-for="(item, index) in newsListData.item"
               class="news-card-wrapper"
               :key="index"
@@ -44,14 +44,14 @@
 import { Vue, Component } from "vue-property-decorator";
 import moment from 'moment';
 import ModelTitle from "@/components/ModelTitle/index.vue";
-import NewsCard from "@/components/NewsCard/index.vue";
+import NewsCardItem from "@/components/NewsCard/item.vue";
 import HeaderCarousel from "@/components/HeaderCarousel/index.vue";
-import * as NewsCardApi from "@/api/peacock/news";
+import * as NewsApi from "@/api/peacock/news";
 @Component({
   name: "NewsList",
   components: {
     ModelTitle,
-    NewsCard,
+    NewsCardItem,
     HeaderCarousel,
   }
 })
@@ -77,7 +77,7 @@ export default class NewsList extends Vue {
   }
 
   private getNewsList(searchData: any) {
-    NewsCardApi.newsList(this.searchData).then((resolve: any) => {
+    NewsApi.newsList(this.searchData).then((resolve: any) => {
       this.newsListData.item = resolve.rows;
       this.newsListData.count = resolve.count;
     });

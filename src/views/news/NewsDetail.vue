@@ -3,7 +3,7 @@
     <div style="background-color: #05101a;">
       <model-title :showMoreButton="false" :title="newsDetail.title" size="large" />
       <div class="publish-time">
-        <span>{{ newsDetail.publishTime }}</span>
+        <span>{{ formatTime(newsDetail.publishTime) }}</span>
       </div>
       <el-row>
         <el-col :xs="1" :sm="3" :lg="1">&nbsp;</el-col>
@@ -26,7 +26,7 @@
 import { Vue, Component, Watch } from "vue-property-decorator";
 import ModelTitle from "@/components/ModelTitle/index.vue";
 import ContentBox from "@/components/ContentBox/index.vue";
-import * as NewsCardApi from "@/api/peacock/news";
+import * as NewsApi from "@/api/peacock/news";
 import moment from "moment";
 
 @Component({
@@ -51,13 +51,13 @@ export default class NewsDetail extends Vue {
   }
 
   created() {
-    NewsCardApi.getNewsById({ id: this.newsId }).then((resolve: any) => {
+    NewsApi.getNewsById({ id: this.newsId }).then((resolve: any) => {
       this.newsDetail = resolve;
-      this.newsDetail.publishTime = this.$utils.common.formatDate(
-        resolve.publishTime,
-        "l"
-      );
     });
+  }
+
+  private formatTime(val: any) {
+    return this.$utils.common.formatDate(val, 'l');
   }
 }
 </script>

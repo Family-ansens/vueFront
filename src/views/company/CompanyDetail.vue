@@ -25,85 +25,7 @@
       </el-row>
     </div>
     <!-- 公司动态 -->
-    <el-row style="margin-bottom: 30px;">
-      <model-title :showMoreButton="true" :title="$t('modelTitle.news')" url="/" size="large" />
-      <el-row :gutter="10">
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div>
-            <news-card
-              class="news-card-wrapper"
-              :picUrl="introductUrl"
-              size="small"
-              :title="data.title"
-              :context="data.context"
-              :date="data.date"
-            />
-          </div>
-        </el-col>
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div>
-            <news-card
-              class="news-card-wrapper"
-              :picUrl="introductUrl"
-              size="small"
-              :title="data.title"
-              :context="data.context"
-              :date="data.date"
-            />
-          </div>
-        </el-col>
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div>
-            <news-card
-              class="news-card-wrapper"
-              :picUrl="introductUrl"
-              size="small"
-              :title="data.title"
-              :context="data.context"
-              :date="data.date"
-            />
-          </div>
-        </el-col>
-      </el-row>
-      <el-row style="margin-top: 35px;" :gutter="10">
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div>
-            <news-card
-              class="news-card-wrapper"
-              :picUrl="introductUrl"
-              size="small"
-              :title="data.title"
-              :context="data.context"
-              :date="data.date"
-            />
-          </div>
-        </el-col>
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div>
-            <news-card
-              class="news-card-wrapper"
-              :picUrl="introductUrl"
-              size="small"
-              :title="data.title"
-              :context="data.context"
-              :date="data.date"
-            />
-          </div>
-        </el-col>
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div>
-            <news-card
-              class="news-card-wrapper"
-              :picUrl="introductUrl"
-              size="small"
-              :title="data.title"
-              :context="data.context"
-              :date="data.date"
-            />
-          </div>
-        </el-col>
-      </el-row>
-    </el-row>
+    <news-card-group />
   </div>
 </template>
 
@@ -111,7 +33,7 @@
 import { Vue, Component, Watch } from "vue-property-decorator";
 import ModelTitle from "@/components/ModelTitle/index.vue";
 import GroupList from "@/components/GroupList/index.vue";
-import NewsCard from "@/components/NewsCard/index.vue";
+import NewsCardGroup from "@/components/NewsCard/index.vue";
 import ContentBox from "@/components/ContentBox/index.vue";
 import * as CompanyApi from "@/api/peacock/company";
 
@@ -120,20 +42,11 @@ import * as CompanyApi from "@/api/peacock/company";
   components: {
     ModelTitle,
     GroupList,
-    NewsCard,
+    NewsCardGroup,
     ContentBox
   }
 })
 export default class CompanyDetail extends Vue {
-  private introductUrl = require("@/assets/img/test.png");
-
-  private data = {
-    title: "标题标题标题标题",
-    context:
-      "测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试",
-    date: "2019.08.26"
-  };
-
   private activeIndex = 0;
   private groupListData = [];
   private companyListDetail = new Array({ title: "", content: "" });
@@ -184,13 +97,5 @@ export default class CompanyDetail extends Vue {
 <style lang="scss" scoped>
 .main-wrapper {
   padding: 15px;
-}
-
-.item-wrapper {
-  margin-bottom: 15px;
-}
-
-.news-card-wrapper {
-  margin: 0 auto;
 }
 </style>

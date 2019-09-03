@@ -30,7 +30,7 @@ export default class Item extends Vue {
   @Prop({ required: true }) picUrl!: string;
   @Prop({ required: true }) context!: string;
   @Prop({ required: true }) bashPath!: string;
-  
+
 }
 </script>
 
@@ -42,9 +42,12 @@ export default class Item extends Vue {
   letter-spacing: 2px;
 
   .title-wrapper {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
     margin-bottom: 8px;
+    color: #ffffff;
     span {
-      color: #ffffff;
       font-size: 14px;
     }
   }
@@ -57,6 +60,10 @@ export default class Item extends Vue {
   .context-box-wrapper {
     border-top: solid #ffffff 1.5px;
     p {
+      -webkit-line-clamp: 7;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
       font-size: 12px;
       color: #a3b0b9;
       line-height: 18px;
