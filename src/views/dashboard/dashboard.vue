@@ -35,104 +35,12 @@
 
     <!-- 产品介绍 -->
     <el-row style="margin-bottom: 30px;">
-      <model-title :showMoreButton="true" :title="$t('modelTitle.products')" url="/product/list" />
-      <el-row>
-        <el-col class="hidden-xs-only">
-          <el-tabs style="width: 720px; margin: 0 auto;">
-            <el-tab-pane
-              v-for="(item, index) in productsGroupsArrays"
-              :label="item.title"
-              :name="item.name"
-              :key="index"
-              style="color: #ffffff;"
-            />
-          </el-tabs>
-        </el-col>
-      </el-row>
-      <el-row>
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div class="chart-wrapper">
-            <product-card :picUrl="introductUrl" title="test" class="product-card" />
-          </div>
-        </el-col>
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div class="chart-wrapper">
-            <product-card :picUrl="introductUrl" title="test" class="product-card" />
-          </div>
-        </el-col>
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div class="chart-wrapper">
-            <product-card :picUrl="introductUrl" title="test" class="product-card" />
-          </div>
-        </el-col>
-      </el-row>
-      <el-row style="margin-top: 35px;">
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div class="chart-wrapper">
-            <product-card :picUrl="introductUrl" title="test" class="product-card" />
-          </div>
-        </el-col>
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div class="chart-wrapper">
-            <product-card :picUrl="introductUrl" title="test" class="product-card" />
-          </div>
-        </el-col>
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div class="chart-wrapper">
-            <product-card :picUrl="introductUrl" title="test" class="product-card" />
-          </div>
-        </el-col>
-      </el-row>
+      <product-card-group />
     </el-row>
 
     <!-- 应用展示 -->
     <el-row style="background-color: #05101a; padding-bottom: 30px;">
-      <model-title :showMoreButton="true" :title="$t('modelTitle.cases')" url="/case/list" />
-      <el-col class="hidden-xs-only">
-        <el-tabs style="width: 720px; margin: 0 auto;">
-          <el-tab-pane
-            v-for="(item, index) in productsGroupsArrays"
-            :label="item.title"
-            :name="item.name"
-            :key="index"
-            style="color: #ffffff;"
-          />
-        </el-tabs>
-      </el-col>
-      <el-row>
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div class="chart-wrapper">
-            <product-card :picUrl="introductUrl" title="test" class="product-card" />
-          </div>
-        </el-col>
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div class="chart-wrapper">
-            <product-card :picUrl="introductUrl" title="test" class="product-card" />
-          </div>
-        </el-col>
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div class="chart-wrapper">
-            <product-card :picUrl="introductUrl" title="test" class="product-card" />
-          </div>
-        </el-col>
-      </el-row>
-      <el-row style="margin-top: 35px;">
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div class="chart-wrapper">
-            <product-card :picUrl="introductUrl" title="test" class="product-card" />
-          </div>
-        </el-col>
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div class="chart-wrapper">
-            <product-card :picUrl="introductUrl" title="test" class="product-card" />
-          </div>
-        </el-col>
-        <el-col :xs="24" :sm="24" :lg="8">
-          <div class="chart-wrapper">
-            <product-card :picUrl="introductUrl" title="test" class="product-card" />
-          </div>
-        </el-col>
-      </el-row>
+      <case-card-group />
     </el-row>
 
     <!-- 公司动态 -->
@@ -144,7 +52,8 @@
 
 <script lang="ts">
 import ModelTitle from "@/components/ModelTitle/index.vue";
-import ProductCard from "@/components/ProductCard/index.vue";
+import ProductCardGroup from "@/components/ProductCard/index.vue";
+import CaseCardGroup from "@/components/CaseCard/index.vue";
 import NewsCardGroup from "@/components/NewsCard/index.vue";
 import HeaderCarousel from "@/components/HeaderCarousel/index.vue";
 import { Vue, Component } from "vue-property-decorator";
@@ -152,35 +61,14 @@ import { Vue, Component } from "vue-property-decorator";
 @Component({
   components: {
     ModelTitle,
-    ProductCard,
+    ProductCardGroup,
+    CaseCardGroup,
     NewsCardGroup,
     HeaderCarousel
   }
 })
 export default class Dashboard extends Vue {
   private introductUrl = require("@/assets/img/test.png");
-  private productsGroupsArrays = [
-    {
-      title: "最新产品",
-      name: "1"
-    },
-    {
-      title: "注塑聚氨酯筛板",
-      name: "2"
-    },
-    {
-      title: "钢丝网窗纱",
-      name: "3"
-    },
-    {
-      title: "拉丝机",
-      name: "4"
-    },
-    {
-      title: "钢丝绳芯聚氨酯筛网",
-      name: "5"
-    }
-  ];
 
   private data = {
     title: "标题标题标题标题",
@@ -193,11 +81,6 @@ export default class Dashboard extends Vue {
 
 <style lang="scss">
 @import "@/assets/scss/variables.scss";
-
-.el-tabs__item {
-  color: #ffffff;
-  font-size: 20px;
-}
 </style>
 
 <style lang="scss" scoped>
@@ -233,17 +116,6 @@ export default class Dashboard extends Vue {
   .synopsis-pic {
     padding: 15px;
   }
-}
-
-.chart-wrapper {
-  text-align: center;
-  .product-card {
-    display: inline-block;
-  }
-}
-
-.news-card-wrapper {
-  margin: 0 auto;
 }
 </style>
 
