@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: #05101a;">
+  <div style="background-color: #05101a; padding-top: 10px;">
     <model-title
       :showMoreButton="true"
       :title="$t('modelTitle.hotSale')"

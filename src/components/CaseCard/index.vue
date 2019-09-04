@@ -1,6 +1,6 @@
 <template>
   <div style="padding: 0 15px 0 15px;">
-    <model-title :showMoreButton="true" :title="$t('modelTitle.cases')" url="/case/list" />
+    <model-title :showMoreButton="true" :title="$t('modelTitle.cases')" url="/case/list" style="margin-bottom: 15px;"/>
     <el-row>
       <el-col class="hidden-xs-only" style="text-align: center; margin-bottom: 15px;">
         <card-group-tab

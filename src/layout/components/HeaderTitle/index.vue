@@ -5,7 +5,7 @@
         <el-row>
           <el-col :xs="0.5" :sm="1" :lg="3">&nbsp;</el-col>
           <el-col :xs="23" :sm="22" :lg="20">
-            <el-image class="logo" :src="logoImageUrl" lazy ></el-image>
+            <el-image class="logo" fit="cover" :src="logoImageUrl" lazy ></el-image>
           </el-col>
           <el-col :xs="0.5" :sm="1" :lg="1">&nbsp;</el-col>
         </el-row>
@@ -13,6 +13,7 @@
       <el-col :xs="24" :sm="24" :lg="12">
         <el-row class="borderBottom">
           <el-col class="topContactBox" :xs="12" :sm="12" :lg="6">
+            <span class="hidden-xs-only hidden-sm-only">&nbsp;</span>
             <svg-icon class="svg-icon" name="微信" />
             <span>15612839018</span>
           </el-col>
@@ -26,7 +27,7 @@
           </el-col>
           <el-col class="topContactBox" :xs="12" :sm="12" :lg="5">
             <el-dropdown trigger="click" @command="handleSetLanguage">
-              <svg-icon name="language" class="svg-icon" color="#bbc7cf" />
+              <svg-icon name="language" class="svg-icon" color="#bbc7cf" style="cursor: pointer;"/>
               <span style="color: #bbc7cf;">{{ $t('components.languageButton') }}</span>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item :disabled="language==='zhCn'" command="zhCn">中文</el-dropdown-item>

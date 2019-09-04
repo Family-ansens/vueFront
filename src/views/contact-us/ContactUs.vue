@@ -7,7 +7,8 @@
           <model-title :showMoreButton="false" :title="$t('contactUs.title')" size="large"/>
           <!-- 文本介绍 -->
           <el-row :gutter="20">
-            <el-col :xs="24" :sm="24" :lg="12">
+            <el-col :xs="0" :lg="2">&nbsp;</el-col>
+            <el-col :xs="24" :sm="22" :lg="10">
               <div class="contact-box first-box">
                 <span class="title">{{ $t('contactUs.ZHANGRUI') }}</span>
                 <br />
@@ -72,6 +73,7 @@
                 <svg-icon name="pinterest" color="#C02328" />
               </div>
             </el-col>
+            <el-col :xs="0" :lg="2">&nbsp;</el-col>
           </el-row>
           <el-form
             label-width="100px"
