@@ -65,9 +65,6 @@ export default class ProductCardGroup extends Vue {
   private firstNewsList = new Array<any>();
   private secondNewsList = new Array<any>();
   private newsData = new Array<any>();
-
-  private introductUrl = require("@/assets/img/test.png");
-
   created() {
     ProductApi.homeProductGroups().then((resolve: any) => {
       this.productsGroupsArrays = resolve.slice(0, 5);

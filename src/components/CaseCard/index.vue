@@ -78,7 +78,6 @@ export default class CaseCardGroup extends Vue {
     this.firstNewsList = this.caseData.slice(0, 3);
     this.secondNewsList = this.caseData.slice(3, 6);
     this.newsData = [this.firstNewsList, this.secondNewsList];
-    console.info(this.newsData);
   }
 }
 </script>

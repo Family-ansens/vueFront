@@ -107,7 +107,6 @@ export default class CaseList extends Vue {
   }
 
   private groupListEven(row: any) {
-    console.info(row);
     this.searchData.groupId = row.id;
     this.searchData.page = 1;
     this.getCaseByGroup(this.searchData);

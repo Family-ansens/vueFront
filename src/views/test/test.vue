@@ -1,9 +1,9 @@
 <template>
   <div>
-    <el-pagination
+    <!-- <el-pagination
       layout="prev, pager, next"
       :total="1000"
-    />
+    /> -->
   </div>
 </template>
 
@@ -26,7 +26,7 @@ import Item from "@/components/Item/index.vue";
   }
 })
 export default class Test extends Vue {
-  private introductUrl = require("@/assets/img/test.png");
+  // private introductUrl = require("@/assets/img/test.png");
 
   private data1 = {
     title: "标题标题标题标题",
