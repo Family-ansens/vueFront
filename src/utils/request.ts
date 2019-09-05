@@ -1,8 +1,9 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
-import router from '@/router';
+// import router from '@/router';
 import { MessageBox, Message } from 'element-ui';
 import * as HOST from '@/config';
 import authService from '@/utils/auth';
+import { commonUtil } from '@/utils/common-utils';
 
 /**
  * 若系统参数NODE_ENV不为正式环境或为空，默认去本地
@@ -54,14 +55,13 @@ export interface IRequest {
 class Request implements IRequest {
 
   public async get(url: string, data: any = {}, config: any = {}) {
-    const params = Object.assign({ params: data }, config);
+    const params = Object.assign({ params: data, headers: { 'Accept-Language': commonUtil.language }}, config);
     const response = await this.createAxiosInstance().get(url, params);
     return response;
   }
 
   public async post(url: string, data: any = {}, config: any = {}) {
-    const params = Object.assign({ params: data });
-    const response = await this.createAxiosInstance().post(url, params, config);
+    const response = await this.createAxiosInstance().post(url, data, config);
     return response;
   }
 
@@ -125,36 +125,35 @@ class Request implements IRequest {
     // 响应拦截
     service.interceptors.response.use((res: AxiosResponse) => {
       const { data, status } = res;
-
       // TODO: 可以做个网关
       if (status === 200 && isMock) {
         // 响应是来自MOCK数据，直接返回数据
         return data;
       }
-      if (status === 200 && data && data.code === 0) {
+      if (status === 200 && data) {
         return data;
       }
 
-      // 自定义code if the custom code is not 20000, it is judged as an error.
-      if (data.code !== 20000) {
+      // 自定义code if the custom code is not 200, it is judged as an error.
+      if (status !== 200) {
         Message({
           message: data.message || 'Error',
           type: 'error',
           duration: 5 * 1000
         });
 
-        // 自定义code 状态50008: Illegal token; 50012: Other clients logged in; 50014: Token expired;
-        if (data.code === 50008 || data.code === 50012 || data.code === 50014) {
-          // to re-login
-          MessageBox.confirm('你已被登出，可以取消继续留在该页面，或者重新登录', '确定登出', {
-            confirmButtonText: '重新登录',
-            cancelButtonText: '取消',
-            type: 'warning'
-          }).then(() => {
-            // TODO: 跳转回登录页面
-            return router.replace({ name: 'login' });
-          });
-        }
+        // // 自定义code 状态50008: Illegal token; 50012: Other clients logged in; 50014: Token expired;
+        // if (data.code === 50008 || data.code === 50012 || data.code === 50014) {
+        //   // to re-login
+        //   MessageBox.confirm('你已被登出，可以取消继续留在该页面，或者重新登录', '确定登出', {
+        //     confirmButtonText: '重新登录',
+        //     cancelButtonText: '取消',
+        //     type: 'warning'
+        //   }).then(() => {
+        //     // TODO: 跳转回登录页面
+        //     return router.replace({ name: 'login' });
+        //   });
+        // }
         return Promise.reject(new Error(data.message || 'Error'));
       }
     }, (error: any) => {

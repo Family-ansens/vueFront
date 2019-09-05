@@ -2,9 +2,9 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import * as routes from './router';
 import { Route } from 'vue-router';
-import { Message } from 'element-ui';
-import userService from '@/store/module/user';
-import permissionService from '@/store/module/permission';
+// import { Message } from 'element-ui';
+// import userService from '@/store/module/user';
+// import permissionService from '@/store/module/permission';
 import getPageTitle from '@/utils/get-page-title';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css'; // progress bar style
@@ -12,7 +12,7 @@ import 'nprogress/nprogress.css'; // progress bar style
 NProgress.configure({ showSpinner: false }); // NProgress Configuration
 
 // 白名单, 不需要token校验
-const whiteList = ['/login'];
+// const whiteList = ['/login'];
 
 Vue.use(Router);
 

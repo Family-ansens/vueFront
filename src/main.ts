@@ -8,12 +8,28 @@ import ElementUI from 'element-ui';
 import "@/assets/scss/common.scss";
 import "@/styles/index.scss";
 import '../theme/index.css';
+// 响应式css
+import 'element-ui/lib/theme-chalk/display.css';
 
 import i18n from '@/lang';
 import SvgIcon from 'vue-svgicon';
 import '@/icons';
 
 import './core';
+// 引入vue-amap 高德地图控件
+import VueAMap from 'vue-amap';
+Vue.use(VueAMap);
+// 初始化vue-amap
+VueAMap.initAMapApiLoader({
+  // 高德的key
+  key: 'a594a0e89a9c860c5b177ca23aa97d90',
+  // 插件集合
+  plugin: ['AMap.Autocomplete', 'AMap.PlaceSearch', 
+  'AMap.Scale', 'AMap.OverView', 'AMap.ToolBar', 
+  'AMap.MapType', 'AMap.PolyEditor', 'AMap.CircleEditor'],
+  // 高德 sdk 版本，默认为 1.4.4
+  v: '1.4.4'
+});
 
 Vue.config.productionTip = false;
 Vue.use(ElementUI, {
@@ -36,6 +52,7 @@ Vue.use(SvgIcon, {
 new Vue({
   router,
   store,
+  i18n,
   data() {
     return {
       //

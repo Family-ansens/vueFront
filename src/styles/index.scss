@@ -9,6 +9,10 @@
 // 全局动画
 @import './transition.scss';
 
+h1 {
+  color: #ffffff;
+}
+
 body {
   height: 100%;
   margin: 0;
@@ -34,5 +38,33 @@ html {
     min-height: 100%;
     transition: margin-left .28s;
     position: relative;
+    background: #000;
   }
+
+  .scrollbar-wrapper {
+    overflow-x: hidden !important;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
 }

@@ -1,50 +1,65 @@
 <template>
-<div>
-  <el-row class="footer-hot-sale-box">
-    <el-col :offset="8" :span="8">
-      <div class="title">
-        <span>热销产品</span>
+  <div style="background-color: #05101a; padding-top: 10px;">
+    <model-title
+      :showMoreButton="true"
+      :title="$t('modelTitle.hotSale')"
+      size="small"
+      url="/product/list"
+    />
+    <el-row>
+      <div>
+        <el-carousel type="card" height="200px">
+          <el-carousel-item v-for="(item, index) in productList" :key="index">
+            <router-link tag="div" :to="'/product/detail?id='+item.productId">
+              <el-row>
+                <el-col :span="12">
+                  <el-image :src="item.imgUrl" style="width: 100%;" fit="cover" lazy />
+                </el-col>
+                <el-col :span="12">
+                  <div class="text-box">
+                    <div class="title">
+                      <span>{{ item.productName }}</span>
+                    </div>
+                    <p>{{ item.introduction }}</p>
+                  </div>
+                </el-col>
+              </el-row>
+            </router-link>
+          </el-carousel-item>
+        </el-carousel>
+        <div class="bottom-box"></div>
       </div>
-    </el-col>
-    <el-col :span="8">
-      <more-button class="more-button" url="/" />
-    </el-col>
-  </el-row>
-  <el-row style="background: #05101a;">
-    <div >
-      <el-carousel type="card" height="200px">
-        <el-carousel-item v-for="item in 6" :key="item">
-          <el-row>
-            <el-col :span="12">
-              <el-image :src="product1Url"></el-image>
-            </el-col>
-            <el-col :span="12">
-              <div class="text-box">
-                <span>标题</span>
-                <p>在全球范围内，目前对于大数据都有一个共识，即大数据技术的战略意义不在于掌握庞大的数据信息，而在于对这些含有意义的数据进行专业化处理。换言之，如果把大数据比作一种产业，那么这种产业实现盈利的关键，在于提高对数据的“加工能力”，通过“加工”实现数据的“增值”...</p>
-              </div>
-            </el-col>
-          </el-row>
-        </el-carousel-item>
-      </el-carousel>
-      <div class="bottom-box"></div>
-    </div>
-  </el-row>
-</div>
+    </el-row>
+  </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import MoreButton from "@/components/MoreButton/index.vue";
+import ModelTitle from "@/components/ModelTitle/index.vue";
+
+import * as ProductApi from "@/api/peacock/product";
 
 @Component({
   name: "FooterHotSale",
   components: {
-    MoreButton
+    ModelTitle
   }
 })
 export default class FooterHotSale extends Vue {
-  private product1Url = require("@/assets/img/product/product1.png");
+  private productList = [
+    {
+      imgUrl: "",
+      introduction: "",
+      productName: "",
+      productId: 0
+    }
+  ];
+
+  created() {
+    ProductApi.productHotSaleProducts().then((resolve: any) => {
+      this.productList = resolve.rows;
+    });
+  }
 }
 </script>
 
@@ -55,36 +70,39 @@ export default class FooterHotSale extends Vue {
 </style>
 
 <style lang="scss" scoped>
-.footer-hot-sale-box {
-  background: #05101a;
-  .title {
-    height: 75px;
-    text-align: center;
-    span {
-      font-size: 30px;
-      color: #fff;
-      border-bottom: solid #1d678c 4px;
-      padding-bottom: 8px;
-    }
-  }
-}
-
 .more-button {
   float: right;
-  margin:17px 100px 0 0;
+  margin: 10px 100px 0 0;
 }
-
+//热销走马灯样式
 .text-box {
-  span {
-    font: 25px bolder;
-  }
   padding: 5px;
   color: #fff;
   font-size: 14px;
+  letter-spacing: 1px;
+  .title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    span {
+      font: 25px bolder;
+    }
+  }
+
+  p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 8;
+    overflow: hidden;
+  }
 }
 
 .bottom-box {
   margin: 0 30px 0 30px;
   border-bottom: solid #fff 3px;
+}
+
+.carousel-wrapper {
+  height: 200px;
 }
 </style>
