@@ -68,7 +68,7 @@ export default class CaseCardGroup extends Vue {
 
   created() {
     CasesApi.homeExampleGroups().then((resolve: any) => {
-      this.casesGroupsArrays = resolve;
+      this.casesGroupsArrays = resolve.slice(0, 5);
       this.tabHandleClick(this.activeIndex);
     });
   }

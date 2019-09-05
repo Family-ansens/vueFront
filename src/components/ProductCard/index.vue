@@ -70,7 +70,7 @@ export default class ProductCardGroup extends Vue {
 
   created() {
     ProductApi.homeProductGroups().then((resolve: any) => {
-      this.productsGroupsArrays = resolve;
+      this.productsGroupsArrays = resolve.slice(0, 5);
       this.tabHandleClick(this.activeIndex);
     });
   }
