@@ -41,7 +41,7 @@ export default class ModelTitle extends Vue {
 
 <style lang="scss" scoped>
 .footer-hot-sale-box {
-  padding: 5px 0 15px 0;
+  padding: 15px 0 15px 0;
   .title {
     text-align: center;
     // text-overflow: ellipsis;

@@ -57,7 +57,7 @@ export default class CompanyDetail extends Vue {
   }
 
   created() {
-    CompanyApi.companyList()
+    CompanyApi.companyList({})
       .then((resolve: any) => {
         this.groupListData = resolve.rows;
       })

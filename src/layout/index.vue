@@ -1,19 +1,13 @@
 <template>
   <div class="app-wrapper">
-    <!-- <el-header> -->
-      <header-title />
-      <header-menu />
-    <!-- </el-header> -->
-    <!-- <el-main> -->
-      <div class="main-container">
-        <app-main />
-      </div>
-    <!-- </el-main> -->
-    <!-- <el-footer> -->
-      <footer-hot-sale />
-      <footer-contact />
-      <header-menu />
-    <!-- </el-footer> -->
+    <header-title />
+    <header-menu />
+    <div class="main-container">
+      <app-main />
+    </div>
+    <footer-hot-sale />
+    <footer-contact style="padding-bottom: 25px;"/>
+    <header-menu />
   </div>
 </template>
 
@@ -34,9 +28,7 @@ import FooterContact from "@/layout/components/FooterContact/index.vue";
     FooterContact
   }
 })
-export default class Layout extends Vue {
-
-}
+export default class Layout extends Vue {}
 </script>
 
 <style lang="scss" scoped>
