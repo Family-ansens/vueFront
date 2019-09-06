@@ -31,11 +31,11 @@ export default class HeaderMenu extends Vue {
   // @Prop() activeIndex!: string;
 
   get activeIndex() {
-    return this.$services.view.menuActiveIndex;
+    return this.$services.view.getMenuActiveIndex();
   }
 
   set activeIndex(index: string) {
-    this.$services.view.menuActiveIndex = index;
+    this.$services.view.setMenuActiveIndex(index);
   }
 
   private menuItem = [

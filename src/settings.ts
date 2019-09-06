@@ -1,5 +1,6 @@
+import i18n from "@/lang";
 export default {
-  title: 'web-client',
+  title: i18n.t("systems.headTitle").toString(),
 
   /**
    * @type {boolean} true | false

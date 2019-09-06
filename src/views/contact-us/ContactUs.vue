@@ -151,7 +151,24 @@ import { Vue, Component, Prop } from "vue-property-decorator";
 import ModelTitle from "@/components/ModelTitle/index.vue";
 import * as ContactUsApi from "@/api/peacock/contactUs";
 import { AMapManager } from "vue-amap";
+import { MetaInfo } from 'vue-meta';
 @Component({
+  metaInfo(): MetaInfo {
+    return {
+      title: this.$services.view.getTDK().title,
+      htmlAttrs: {
+        lang: this.$utils.common.language,
+      },
+      meta: [{                 // set meta
+        name: 'description',
+        content: this.$services.view.getTDK().description,
+      }],
+      // link: [{                 // set link
+      //   rel: 'asstes',
+      //   href: 'https://assets-cdn.github.com/'
+      // }]
+    };
+  },
   name: "ContactUs",
   components: {
     ModelTitle

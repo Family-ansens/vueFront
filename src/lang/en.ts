@@ -60,7 +60,11 @@ export default {
     findUs: 'WE ARE HERE',
   },
   systems: {
+    headTitle: ' - Yourui Wire Mesh Machinery Manufacturing Co. Ltd.',
     putSuccess: 'Success',
     putError: 'Error'
+  },
+  router: {
+    dashboard: 'Welcome to '
   }
 };

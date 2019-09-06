@@ -49,7 +49,24 @@ import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 import ModelTitle from "@/components/ModelTitle/index.vue";
 import ContentBox from "@/components/ContentBox/index.vue";
 import * as ProductApi from "@/api/peacock/product";
+import { MetaInfo } from 'vue-meta';
 @Component({
+  metaInfo(): MetaInfo {
+    return {
+      title: this.$services.view.getTDK().title,
+      htmlAttrs: {
+        lang: this.$utils.common.language,
+      },
+      meta: [{                 // set meta
+        name: 'description',
+        content: this.$services.view.getTDK().description,
+      }],
+      // link: [{                 // set link
+      //   rel: 'asstes',
+      //   href: 'https://assets-cdn.github.com/'
+      // }]
+    };
+  },
   name: "ProductDetail",
   components: {
     ModelTitle,
@@ -61,7 +78,8 @@ export default class ProductDetail extends Vue {
     id: 0,
     name: "",
     desc: "",
-    imgList: [""]
+    imgList: [""],
+    introduction: ""
   };
 
   private relatedProducts = [
@@ -85,6 +103,7 @@ export default class ProductDetail extends Vue {
   private onProductIdChange() {
     ProductApi.productGetById(this.$route.query.id).then((resolve: any) => {
       this.productData = resolve;
+      this.$services.view.setTDK({title: this.productData.name, description: this.productData.introduction });
     });
 
     ProductApi.relateProductGetById(this.$route.query.id).then(

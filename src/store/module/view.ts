@@ -1,8 +1,12 @@
 import storeService, { IStoreService } from '../store';
 import { INamespacedState } from '../store';
+import i18n from "@/lang";
 
 export interface IViewService {
-  menuActiveIndex: string;
+  getMenuActiveIndex();
+  setMenuActiveIndex(val: string);
+  getTDK();
+  setTDK(val: any);
   // visitedViews: any[];
   // cachedViews: any[];
 
@@ -24,7 +28,8 @@ export interface IViewService {
 
 const stateTypes = {
   NAMESPACE: "view",
-  MENUACtIVEINDEX: "menuActiveIndex"
+  MENUACtIVEINDEX: "menuActiveIndex",
+  TDK: "tdk",
   // VISITEDVIEWS: "visitedViews",
   // CACHEDVIEWS: "cachedViews",
   // OPENTAB: "openTab",
@@ -38,6 +43,10 @@ class ViewService implements IViewService {
   constructor() {
     this._store = storeService.createNamespace(stateTypes.NAMESPACE, {
       [stateTypes.MENUACtIVEINDEX]: "dashboard",
+      [stateTypes.TDK]: {
+        title: "",
+        description: ""
+      },
       // [stateTypes.VISITEDVIEWS]: [],
       // [stateTypes.CACHEDVIEWS]: [],
       // [stateTypes.OPENTAB]: [{ route: '/index/main', name: 'main' }],
@@ -45,12 +54,23 @@ class ViewService implements IViewService {
     });
   }
 
-  get menuActiveIndex() {
+  getMenuActiveIndex() {
     return this._store.getData(stateTypes.MENUACtIVEINDEX);
   }
 
-  set menuActiveIndex(index: string) {
+  setMenuActiveIndex(index: string) {
     this._store.setData(stateTypes.MENUACtIVEINDEX, index);
+  }
+
+  getTDK() {
+    return this._store.getData(stateTypes.TDK);
+  }
+
+  setTDK(val: any) {
+    val.title = val.title + i18n.t("systems.headTitle").toString();
+    val.description = val.description.substr(0, 100);
+    console.info(val.description);
+    this._store.setData(stateTypes.TDK, val);
   }
 
   // get visitedViews() {

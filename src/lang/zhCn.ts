@@ -60,7 +60,11 @@ export default {
     findUs: '找到我们',
   },
   systems: {
+    headTitle: ' - 安平县优瑞丝网机械有限公司',
     putSuccess: '操作成功',
     putError: '操作失败'
+  },
+  router: {
+    dashboard: '欢迎 '
   }
 };

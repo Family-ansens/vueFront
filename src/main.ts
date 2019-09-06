@@ -13,6 +13,7 @@ import 'element-ui/lib/theme-chalk/display.css';
 
 import i18n from '@/lang';
 import SvgIcon from 'vue-svgicon';
+import VueMeta from 'vue-meta';
 import '@/icons';
 
 import './core';
@@ -44,6 +45,8 @@ Vue.use(SvgIcon, {
   defaultHeight: '1.5em',
   tagName: 'svg-icon'
 });
+// 添加vue-meta
+Vue.use(VueMeta);
 /**
  * 自定义指令 权限校验 v-permission
  */
@@ -58,6 +61,9 @@ new Vue({
       //
     };
   },
-  render: (h) => h(App)
+  render: (h) => h(App),
+  mounted() {
+    document.dispatchEvent(new Event('render-event'));
+  }
 }).$mount('#app');
 

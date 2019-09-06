@@ -1,12 +1,12 @@
 /** 
  * 线上环境
  */
-export const ONLINEHOST: string = 'http://www.puwiremesh.com:2000';
+export const ONLINEHOST: string = 'http://localhost:8901';
 
 /** 
  * 测试环境
  */
-export const QAHOST: string = 'http://192.168.1.107:8901';
+export const QAHOST: string = 'http://www.puwiremesh.com:2000';
 
 /** 
  * 线上mock
