@@ -25,13 +25,14 @@ export default class CardGroupTabItem extends Vue {
 
 <style lang="scss" scoped>
 .card-group-tab-item-wrapper {
-  font-size: 40px;
+  font-size: 30px;
   color: #adadad;
   cursor: pointer;
   &:hover {
     color: #ffffff;
   }
   span {
+    white-space:nowrap;
     margin: 5px 20px 5px 20px;
   }
 }

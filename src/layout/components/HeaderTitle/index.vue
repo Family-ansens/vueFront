@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-row>
+    <el-row style="background-color: #f3f3f3;">
       <el-col :xs="24" :sm="24" :lg="12">
         <el-row>
           <el-col :xs="0.5" :sm="1" :lg="3">&nbsp;</el-col>
@@ -28,7 +28,7 @@
           <el-col class="topContactBox" :xs="12" :sm="12" :lg="5">
             <el-dropdown trigger="click" @command="handleSetLanguage">
               <svg-icon name="language" class="svg-icon" color="#bbc7cf" style="cursor: pointer;"/>
-              <span style="color: #bbc7cf;">{{ $t('components.languageButton') }}</span>
+              <span style="color: #bbc7cf; font-size: 10px;">{{ $t('components.languageButton') }}</span>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item :disabled="language==='zhCn'" command="zhCn">中文</el-dropdown-item>
                 <el-dropdown-item :disabled="language==='en'" command="en">English</el-dropdown-item>

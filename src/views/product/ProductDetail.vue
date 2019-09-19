@@ -6,15 +6,10 @@
         <el-row>
           <div style="background-color: #171f2a; padding: 15px;">
             <model-title size="large" :showMoreButton="false" :title="productData.name" />
-            <el-carousel type="card" height="200px">
+            <el-carousel type="card" height="300px" :interval="5000">
               <el-carousel-item v-for="(item, index) in productData.imgList" :key="index">
                 <div style="text-align: center;">
-                  <el-image
-                    :src="item"
-                    style="height: 200px; width: 100%;"
-                    fit="contain"
-                    lazy
-                  />
+                  <el-image :src="item" style="height: 300px; width: 100%;" fit="contain" />
                 </div>
               </el-carousel-item>
             </el-carousel>
@@ -26,12 +21,21 @@
         </el-row>
         <el-row>
           <div style="background-color: #171f2a;">
-              <model-title size="small" :showMoreButton="false" :title="$t('products.relatedProductsTitle')" />
+            <model-title
+              size="small"
+              :showMoreButton="false"
+              :title="$t('products.relatedProductsTitle')"
+            />
             <el-carousel type="card" height="150px">
               <el-carousel-item v-for="item in relatedProducts" :key="item">
                 <router-link :tag="div" :to="'/product/detail?id='+item.id">
                   <div style="text-align: center;">
-                    <el-image :src="item.imgUrl" style="height: 150px; width: 100%;" fit="contain" lazy />
+                    <el-image
+                      :src="item.imgUrl"
+                      style="height: 150px; width: 100%;"
+                      fit="contain"
+                      lazy
+                    />
                   </div>
                 </router-link>
               </el-carousel-item>
@@ -49,18 +53,21 @@ import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 import ModelTitle from "@/components/ModelTitle/index.vue";
 import ContentBox from "@/components/ContentBox/index.vue";
 import * as ProductApi from "@/api/peacock/product";
-import { MetaInfo } from 'vue-meta';
+import { MetaInfo } from "vue-meta";
 @Component({
   metaInfo(): MetaInfo {
     return {
       title: this.$services.view.getTDK().title,
       htmlAttrs: {
-        lang: this.$utils.common.language,
+        lang: this.$utils.common.language
       },
-      meta: [{                 // set meta
-        name: 'description',
-        content: this.$services.view.getTDK().description,
-      }],
+      meta: [
+        {
+          // set meta
+          name: "description",
+          content: this.$services.view.getTDK().description
+        }
+      ]
       // link: [{                 // set link
       //   rel: 'asstes',
       //   href: 'https://assets-cdn.github.com/'
@@ -103,7 +110,10 @@ export default class ProductDetail extends Vue {
   private onProductIdChange() {
     ProductApi.productGetById(this.$route.query.id).then((resolve: any) => {
       this.productData = resolve;
-      this.$services.view.setTDK({title: this.productData.name, description: this.productData.introduction });
+      this.$services.view.setTDK({
+        title: this.productData.name,
+        description: this.productData.introduction
+      });
     });
 
     ProductApi.relateProductGetById(this.$route.query.id).then(

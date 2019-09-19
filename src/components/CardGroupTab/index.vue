@@ -2,6 +2,7 @@
   <div>
     <el-row>
       <el-col style="border-bottom: solid #ffffff 3px;">
+        <el-scrollbar>
         <card-group-tab-item
           class="card-group-tab-item-wrapper"
           :title="item.title"
@@ -11,6 +12,7 @@
           :onClickEven="itemOnClickEven"
           :isActive="index === activeIndex"
         />
+        </el-scrollbar>
       </el-col>
     </el-row>
   </div>

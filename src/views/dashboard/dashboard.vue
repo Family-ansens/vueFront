@@ -1,5 +1,8 @@
 <template>
   <div>
+    <el-row>
+      <header-carousel />
+    </el-row>
     <!-- 公司介绍 -->
     <el-row>
       <company-introduction />

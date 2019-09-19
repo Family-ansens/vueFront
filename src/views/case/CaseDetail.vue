@@ -6,10 +6,10 @@
         <el-row>
           <div style="padding: 15px;">
             <model-title size="large" :showMoreButton="false" :title="caseData.name" />
-            <el-carousel type="card" height="200px">
+            <el-carousel type="card" height="300px" :interval="5000">
               <el-carousel-item v-for="(item, index) in caseData.imgList" :key="index">
                 <div style="text-align: center;">
-                  <el-image :src="item" style="height: 200px; width: 100%;" fit="contain" lazy />
+                  <el-image :src="item" style="height: 300px; width: 100%;" fit="contain" />
                 </div>
               </el-carousel-item>
             </el-carousel>
