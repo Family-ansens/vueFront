@@ -12,10 +12,12 @@
           <el-carousel-item v-for="(item, index) in productList" :key="index">
             <router-link tag="div" :to="'/product/detail?id='+item.productId">
               <el-row>
-                <el-col :span="12">
-                  <el-image :src="item.imgUrl" style="width: 100%;" fit="cover" lazy />
+                <el-col :xs="24" :sm="12" :lg="12">
+                  <div style="text-align: center;">
+                    <el-image :src="item.imgUrl" style="height: 200px; width: 100%;" fit="cover" lazy />
+                  </div>
                 </el-col>
-                <el-col :span="12">
+                <el-col :xs="0" :sm="12" :lg="12">
                   <div class="text-box">
                     <div class="title">
                       <span>{{ item.productName }}</span>

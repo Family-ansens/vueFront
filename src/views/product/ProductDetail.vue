@@ -6,13 +6,7 @@
         <el-row>
           <div style="background-color: #171f2a; padding: 15px;">
             <model-title size="large" :showMoreButton="false" :title="productData.name" />
-            <el-carousel type="card" height="300px" :interval="5000">
-              <el-carousel-item v-for="(item, index) in productData.imgList" :key="index">
-                <div style="text-align: center;">
-                  <el-image :src="item" style="height: 300px; width: 100%;" fit="contain" />
-                </div>
-              </el-carousel-item>
-            </el-carousel>
+            <detail-pic-list :imgList="productData.imgList" interval="6000"/>
           </div>
         </el-row>
         <el-row>
@@ -52,6 +46,7 @@
 import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 import ModelTitle from "@/components/ModelTitle/index.vue";
 import ContentBox from "@/components/ContentBox/index.vue";
+import DetailPicList from "@/components/DetailPicList/index.vue";
 import * as ProductApi from "@/api/peacock/product";
 import { MetaInfo } from "vue-meta";
 @Component({
@@ -77,7 +72,8 @@ import { MetaInfo } from "vue-meta";
   name: "ProductDetail",
   components: {
     ModelTitle,
-    ContentBox
+    ContentBox,
+    DetailPicList
   }
 })
 export default class ProductDetail extends Vue {

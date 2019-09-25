@@ -4,10 +4,10 @@
       <el-col :xs="24" :sm="24" :lg="12">
         <el-row>
           <el-col :xs="0.5" :sm="1" :lg="3">&nbsp;</el-col>
-          <el-col :xs="23" :sm="22" :lg="20">
-            <el-image class="logo" fit="cover" :src="logoImageUrl" lazy ></el-image>
+          <el-col :xs="23" :sm="22" :lg="19">
+            <el-image class="logo" fit="cover" :src="logoUrl" ></el-image>
           </el-col>
-          <el-col :xs="0.5" :sm="1" :lg="1">&nbsp;</el-col>
+          <el-col :xs="0.5" :sm="1" :lg="2">&nbsp;</el-col>
         </el-row>
       </el-col>
       <el-col :xs="24" :sm="24" :lg="12">
@@ -37,7 +37,7 @@
           </el-col>
         </el-row>
         <el-row>
-          <el-col>
+          <el-col :xs="24" :lg="22">
             <div class="topRightContactBox">
               <svg-icon name="skype" color="#15ACE5" />
               <svg-icon name="fackbook" color="#3C5A99" />
@@ -49,6 +49,9 @@
               <svg-icon name="instagram" color="#D81E06" />
               <svg-icon name="pinterest" color="#C02328" />
             </div>
+          </el-col>
+          <el-col :xs="0" :lg="2">
+            &nbsp;
           </el-col>
         </el-row>
       </el-col>
@@ -62,19 +65,7 @@ import { Component, Vue } from "vue-property-decorator";
   name: "HeaderTitle"
 })
 export default class HeaderTitle extends Vue {
-  private logoUrlEN = require("@/assets/img/logo-en.png");
-  private logoUrlZHCN = require("@/assets/img/logo-zhcn.png");
-
-  get logoImageUrl() {
-    switch (this.language) {
-      case "en":
-        return this.logoUrlEN;
-      case "zhCn":
-        return this.logoUrlZHCN;
-      default:
-        return this.logoUrlEN;
-    }
-  }
+  private logoUrl = require("@/assets/img/logo.png");
 
   get language() {
     return this.$utils.common.language;
@@ -99,7 +90,7 @@ export default class HeaderTitle extends Vue {
 <style lang="scss" scoped>
 .logo {
   width: 100%;
-  padding-top: 30px;
+  padding: 20px 0 10px 0;
 }
 
 .borderBottom {
@@ -122,12 +113,11 @@ export default class HeaderTitle extends Vue {
 }
 
 .topRightContactBox {
-  margin-right: 60px;
   margin-top: 60px;
   clear: both;
   * {
     float: right;
-    margin-left: 15px;
+    margin: 0 15px 10px 0;
   }
 }
 </style>
