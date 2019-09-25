@@ -10,7 +10,7 @@
       :default-active="activeIndex"
     >
       <el-row>
-        <el-col v-for="item in menuItem" :key="item.index" :xs="12" :sm="8" :lg="4">
+        <el-col v-for="item in menuItem" :key="item.index" :xs="24" :sm="8" :lg="4">
           <router-link tag="el-menu-item" :to="item.bashUrl">
             <el-menu-item class="menu-item" :index="item.index">
               <span>{{ $t('menuItem.' + item.name) }}</span>
@@ -31,11 +31,11 @@ export default class HeaderMenu extends Vue {
   // @Prop() activeIndex!: string;
 
   get activeIndex() {
-    return this.$services.view.menuActiveIndex;
+    return this.$services.view.getMenuActiveIndex();
   }
 
   set activeIndex(index: string) {
-    this.$services.view.menuActiveIndex = index;
+    this.$services.view.setMenuActiveIndex(index);
   }
 
   private menuItem = [
@@ -49,12 +49,13 @@ export default class HeaderMenu extends Vue {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .menu-item {
   // width: 16.6666%;
   text-align: center;
   span {
     letter-spacing: 1px;
+    font-weight: 2px;
     font-size: 25px;
   }
 }

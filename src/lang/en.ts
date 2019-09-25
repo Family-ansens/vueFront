@@ -60,7 +60,13 @@ export default {
     findUs: 'WE ARE HERE',
   },
   systems: {
+    headTitle: ' - YouRui (YR) PU Wire Mesh Screen China Factory',
     putSuccess: 'Success',
-    putError: 'Error'
+    putError: 'Error',
+    description: "YOURUI (YR) WIRE MESH Manufacturer,China Factory, PU(Polyurethane) Screen mesh，Tufflex Screen Mesh，Steel Core PU Screen Mesh Use For Separating Sieving Ore Coal Sand Gravel Basalt Iron powder Stone Rock Fruit Cereals and Mining Vibrating Screen.",
+    ICP: 'INTERNET ICP FILING: 冀ICP备19027772号'
+  },
+  router: {
+    dashboard: 'Welcome to '
   }
 };

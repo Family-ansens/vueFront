@@ -6,13 +6,7 @@
         <el-row>
           <div style="padding: 15px;">
             <model-title size="large" :showMoreButton="false" :title="caseData.name" />
-            <el-carousel type="card" height="200px">
-              <el-carousel-item v-for="(item, index) in caseData.imgList" :key="index">
-                <div style="text-align: center;">
-                  <el-image :src="item" style="height: 200px; width: 100%;" fit="contain" lazy />
-                </div>
-              </el-carousel-item>
-            </el-carousel>
+            <detail-pic-list :imgList="caseData.imgList" interval="6000"/>
           </div>
         </el-row>
         <el-row>
@@ -47,12 +41,31 @@
 import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 import ModelTitle from "@/components/ModelTitle/index.vue";
 import ContentBox from "@/components/ContentBox/index.vue";
+import DetailPicList from "@/components/DetailPicList/index.vue";
 import * as CasesApi from "@/api/peacock/cases";
+import { MetaInfo } from 'vue-meta';
 @Component({
+  metaInfo(): MetaInfo {
+    return {
+      title: this.$services.view.getTDK().title,
+      htmlAttrs: {
+        lang: this.$utils.common.language,
+      },
+      meta: [{                 // set meta
+        name: 'description',
+        content: this.$services.view.getTDK().description,
+      }],
+      // link: [{                 // set link
+      //   rel: 'asstes',
+      //   href: 'https://assets-cdn.github.com/'
+      // }]
+    };
+  },
   name: "ProductDetail",
   components: {
     ModelTitle,
-    ContentBox
+    ContentBox,
+    DetailPicList
   }
 })
 export default class ProductDetail extends Vue {
@@ -83,6 +96,7 @@ export default class ProductDetail extends Vue {
   private onCaseIdChange() {
     CasesApi.getExampleById(this.$route.query.id).then((resolve: any) => {
       this.caseData = resolve;
+      this.$services.view.setTDK({title: this.caseData.name, description: this.caseData.introduction });
     });
   }
 }

@@ -2,7 +2,7 @@
   <el-carousel class="img-wrapper">
     <el-carousel-item class="img-wrapper" v-for="(item, index) in imgUrlList" :key="index">
       <div style="text-align: center;">
-      <el-image class="img-wrapper" style="width: 100%;" fit="cover" :key="index" :src="item" lazy />
+        <el-image class="img-wrapper" style="width: 100%;" fit="cover" :key="index" :src="item" />
       </div>
     </el-carousel-item>
   </el-carousel>

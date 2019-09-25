@@ -1,5 +1,8 @@
 <template>
   <div>
+    <el-row>
+      <header-carousel />
+    </el-row>
     <!-- 公司介绍 -->
     <el-row>
       <company-introduction />
@@ -29,8 +32,25 @@ import CaseCardGroup from "@/components/CaseCard/index.vue";
 import NewsCardGroup from "@/components/NewsCard/index.vue";
 import HeaderCarousel from "@/components/HeaderCarousel/index.vue";
 import { Vue, Component } from "vue-property-decorator";
+import { MetaInfo } from 'vue-meta';
 
 @Component({
+  metaInfo(): MetaInfo {
+    return {
+      title: this.$services.view.getTDK().title,
+      htmlAttrs: {
+        lang: this.$utils.common.language,
+      },
+      meta: [{                 // set meta
+        name: 'description',
+        content: this.$services.view.getTDK().description,
+      }],
+      // link: [{                 // set link
+      //   rel: 'asstes',
+      //   href: 'https://assets-cdn.github.com/'
+      // }]
+    };
+  },
   components: {
     CompanyIntroduction,
     ProductCardGroup,
@@ -40,6 +60,10 @@ import { Vue, Component } from "vue-property-decorator";
   }
 })
 export default class Dashboard extends Vue {
+  
+  created() {
+    this.$services.view.setTDK({title: this.$i18n.t("router.dashboard"), description: "tttttttttt"});
+  }
 }
 </script>
 

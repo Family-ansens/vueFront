@@ -10,6 +10,8 @@
             <span class="company-title">安平县优瑞丝网机械有限公司</span>
             <br />
             <span class="company-title-english">Yourui Wire Mesh Machinery Manufacturing Co. Ltd.</span>
+            <br />
+            <span>{{ $t('systems.ICP')}}</span>
           </div>
         </el-col>
         <el-col :xs="6" :sm="3" :lg="2">&nbsp;</el-col>

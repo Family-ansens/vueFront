@@ -12,7 +12,7 @@ export default {
   },
   components: {
     moreButton: '更多',
-    languageButton: '更换语言',
+    languageButton: 'LANGUAGE',
   },
   menuItem: {
     dashboard: '首页',
@@ -60,7 +60,13 @@ export default {
     findUs: '找到我们',
   },
   systems: {
+    headTitle: ' - 钢丝绳芯聚氨酯矿筛网 不锈钢高弹金刚网 数控水箱拉丝机-安平县优瑞丝网机械制造有限公司',
     putSuccess: '操作成功',
-    putError: '操作失败'
+    putError: '操作失败',
+    description: "安平县优瑞丝网机械制造有限公司（YR）专业生产：钢丝绳芯聚氨酯筛网，数控水箱拉丝机，高弹金刚网窗纱，十年生产经验，可定制外贸出口。304不锈钢丝聚氨酯网、筛板拖网托网、红色牛筋棒条复合筛网涨紧钩，筛矿石煤矿铁粉石子玄武岩水果谷物选矿砂石筛分矿山采矿矿用分离设备筛沙机振动筛机械配件脱水高效低噪音不堵孔耐磨耐腐蚀",
+    ICP: '互联网ICP备案：冀ICP备19027772号'
+  },
+  router: {
+    dashboard: '欢迎 '
   }
 };
