@@ -1,9 +1,9 @@
 <template>
   <div>
-    <el-carousel height="200px" :interval="interval">
+    <el-carousel height="400px" :interval="interval" type="card">
       <el-carousel-item v-for="(item, index) in imgList" :key="index">
         <div style="text-align: center;">
-          <el-image :src="item" :height="height" style="height: 200px; width: 100%;" fit="contain" />
+          <el-image :src="item" :height="height" style="height: 400px; width: 100%;" fit="contain" />
         </div>
       </el-carousel-item>
     </el-carousel>
