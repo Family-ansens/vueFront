@@ -9,9 +9,11 @@
       </router-link>
     </el-row>
     <el-row :gutter="10">
+      <router-link tag="div" :to="'/news/detail?id='+id">
       <el-col :span="9">
         <el-image class="image-wrapper" :class="imageSize" fit="cover" :src="picUrl" lazy />
       </el-col>
+      </router-link>
       <el-col :span="15">
         <div class="context-box-wrapper">
           <p :class="contextSize">{{ context }}</p>
@@ -100,6 +102,7 @@ export default class NewsCardItem extends Vue {
   }
   .image-wrapper {
     width: 100%;
+    cursor: pointer;
   }
 
   .context-box-wrapper {
