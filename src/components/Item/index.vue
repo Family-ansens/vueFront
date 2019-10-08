@@ -1,15 +1,16 @@
 <template>
   <div class="components-wrapper">
-    
       <el-row class="title-wrapper">
         <router-link :to="bashPath">
           <span>{{ title }}</span>
         </router-link>
       </el-row>
     <el-row :gutter="17">
+      <router-link tag="div" :to="bashPath">
       <el-col :span="9">
         <el-image class="image-wrapper" fit="cover" :src="picUrl" lazy />
       </el-col>
+      </router-link>
       <el-col :span="15">
         <div class="context-box-wrapper">
           <p>{{ context }}</p>
@@ -55,6 +56,7 @@ export default class Item extends Vue {
   .image-wrapper {
     height: 130px;
     width: 100%;
+    cursor: pointer;
   }
 
   .context-box-wrapper {

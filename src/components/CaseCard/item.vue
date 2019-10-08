@@ -1,9 +1,11 @@
 <template>
-  <div class="case-card-wrapper">
-    <el-image class="image-wrapper" fit="cover" :src="imgUrl" lazy />
-    <router-link :to="bashUrl">
-      <div class="title-box">
-        <span>{{ title }}</span>
+  <div>
+    <router-link tag="div" :to="bashUrl">
+      <div class="case-card-wrapper">
+        <el-image class="image-wrapper" fit="cover" :src="imgUrl" lazy />
+        <div class="title-box">
+          <span>{{ title }}</span>
+        </div>
       </div>
     </router-link>
   </div>
@@ -25,6 +27,7 @@ export default class CaseCardItem extends Vue {
 .case-card-wrapper {
   background-color: #003d5c;
   margin-bottom: 15px;
+  cursor: pointer;
   .image-wrapper {
     width: 100%;
     height: 280px;

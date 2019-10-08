@@ -4,10 +4,10 @@
       <el-col :xs="24" :sm="24" :lg="12">
         <el-row>
           <el-col :xs="0.5" :sm="1" :lg="3">&nbsp;</el-col>
-          <el-col :xs="23" :sm="22" :lg="19">
+          <el-col :xs="23" :sm="22" :lg="20">
             <el-image class="logo" fit="cover" :src="logoUrl" ></el-image>
           </el-col>
-          <el-col :xs="0.5" :sm="1" :lg="2">&nbsp;</el-col>
+          <el-col :xs="0.5" :sm="1" :lg="1">&nbsp;</el-col>
         </el-row>
       </el-col>
       <el-col :xs="24" :sm="24" :lg="12">

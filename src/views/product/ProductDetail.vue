@@ -20,14 +20,14 @@
               :showMoreButton="false"
               :title="$t('products.relatedProductsTitle')"
             />
-            <el-carousel type="card" height="150px">
+            <el-carousel type="card" height="250px">
               <el-carousel-item v-for="item in relatedProducts" :key="item">
                 <router-link :tag="div" :to="'/product/detail?id='+item.id">
                   <div style="text-align: center;">
                     <el-image
                       :src="item.imgUrl"
-                      style="height: 150px; width: 100%;"
-                      fit="contain"
+                      style="height: 250px; width: 100%;"
+                      fit="cover"
                       lazy
                     />
                   </div>

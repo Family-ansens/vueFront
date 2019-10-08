@@ -60,6 +60,13 @@
     "promise-function-async": false, //要求异步函数返回promise
     "max-classes-per-file": [true, 2], // 一个脚本最多几个申明类
     "variable-name": false,
-    "prefer-const": false // 提示可以用const的地方
+    "prefer-const": false, // 提示可以用const的地方
+    "max-line-length": [
+      true, 
+      {
+        "limit": 300, 
+        "ignore-pattern": "^import [^,]+ from |^export | implements"
+      }
+    ] // 最长文本限制
   }
 }

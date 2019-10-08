@@ -10,7 +10,7 @@
       :default-active="activeIndex"
     >
       <el-row>
-        <el-col v-for="item in menuItem" :key="item.index" :xs="24" :sm="8" :lg="4">
+        <el-col v-for="item in menuItem" :key="item.index" :xs="8" :sm="8" :lg="4">
           <router-link tag="el-menu-item" :to="item.bashUrl">
             <el-menu-item class="menu-item" :index="item.index">
               <span>{{ $t('menuItem.' + item.name) }}</span>
@@ -56,7 +56,7 @@ export default class HeaderMenu extends Vue {
   span {
     letter-spacing: 1px;
     font-weight: 2px;
-    font-size: 25px;
+    font-size: 2vw;
   }
 }
 </style>

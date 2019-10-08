@@ -9,7 +9,7 @@
     <el-row>
       <div>
         <el-carousel type="card" height="200px">
-          <el-carousel-item v-for="(item, index) in productList" :key="index">
+          <el-carousel-item v-for="(item, index) in productList" :key="index" style="background-color: #242628;">
             <router-link tag="div" :to="'/product/detail?id='+item.productId">
               <el-row>
                 <el-col :xs="24" :sm="12" :lg="12">
