@@ -1,6 +1,5 @@
 <template>
   <div class="company-introduction">
-    <header-carousel />
     <model-title :showMoreButton="false" :title="$t('modelTitle.company')" size="large"/>
     <el-row>
       <el-col :xs="24" :sm="24" :lg="15" style="padding: 15px;">

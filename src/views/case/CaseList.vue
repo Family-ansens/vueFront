@@ -76,7 +76,7 @@ export default class CaseList extends Vue {
     count: 0
   };
   
-  private activeIndex = 0;
+  private activeIndex = "0";
   private groupListData = [
     {
       id: 0,

@@ -62,7 +62,7 @@ import { MetaInfo } from 'vue-meta';
 export default class Dashboard extends Vue {
   
   created() {
-    this.$services.view.setTDK({title: this.$i18n.t("router.dashboard"), description: "tttttttttt"});
+    this.$services.view.setTDK({title: this.$i18n.t("router.dashboard"), description: this.$i18n.t("systems.description")});
   }
 }
 </script>
