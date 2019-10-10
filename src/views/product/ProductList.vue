@@ -76,7 +76,7 @@ export default class ProductList extends Vue {
     count: 0
   };
 
-  private activeIndex = 0;
+  private activeIndex = "0";
   private groupListData = new Array<any>();
 
   private searchData = {

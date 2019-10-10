@@ -9,9 +9,8 @@
     >
       <el-menu-item
         class="menu-item-wrapper"
-        v-for="(item, index) in items"
+        v-for="(item) in items"
         :key="item.id"
-        :index="index"
         @click="onClickEven(item)"
       >{{ item.title }}</el-menu-item>
     </el-menu>
@@ -25,7 +24,7 @@ import { Vue, Component, Prop } from "vue-property-decorator";
 })
 export default class GroupList extends Vue {
   @Prop({ required: true }) items!: any[];
-  @Prop({ required: true, default: "" }) activeIndex!: string;
+  @Prop({ required: true, default: "0" }) activeIndex!: string;
   @Prop({ required: true }) onClickEven!: (row: any) => void;
 
   created() {
