@@ -83,7 +83,6 @@ export default class CompanyIntroduction extends Vue {
   .synopsis-text-box {
     padding: 15px;
     p {
-      word-break: break-all;
       -webkit-line-clamp: 11;
       display: -webkit-box;
       -webkit-box-orient: vertical;

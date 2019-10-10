@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-row>
-      <el-col style="border-bottom: solid #ffffff 3px;">
+      <el-col>
         <el-scrollbar>
         <card-group-tab-item
           class="card-group-tab-item-wrapper"
