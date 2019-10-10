@@ -29,7 +29,7 @@ import CardGroupTabItem from "@/components/CardGroupTab/item.vue";
 })
 export default class CardGroupTab extends Vue {
   @Prop({ required: true }) private dataList!: any[];
-  @Prop({ required: true, default: 0 }) private activeIndex!: number;
+  @Prop({ default: 0 }) private activeIndex!: number;
   @Prop({}) private itemOnChangeEven!: (index: number) => void;
 
   private itemOnClickEven(index: number) {

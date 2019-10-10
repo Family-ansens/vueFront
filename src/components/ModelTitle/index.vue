@@ -26,9 +26,9 @@ import MoreButton from "@/components/MoreButton/index.vue";
 })
 export default class ModelTitle extends Vue {
   @Prop({ required: true }) private title!: string;
-  @Prop({ required: true }) private url!: string;
+  @Prop({ }) private url!: string;
   @Prop({ default: false }) private showMoreButton!: boolean;
-  @Prop({ required: true, default: "large" }) private size!: string;
+  @Prop({ default: "large" }) private size!: string;
 
   get titleSize() {
     return {
