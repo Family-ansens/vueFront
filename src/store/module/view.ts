@@ -68,8 +68,7 @@ class ViewService implements IViewService {
 
   setTDK(val: any) {
     val.title = val.title + i18n.t("systems.headTitle").toString();
-    val.description = val.description.substr(0, 100);
-    console.info(val.description);
+    val.description = val.description ? val.description.substr(0, 100) : i18n.t("systems.description");
     this._store.setData(stateTypes.TDK, val);
   }
 

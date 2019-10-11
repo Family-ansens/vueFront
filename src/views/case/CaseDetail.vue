@@ -6,7 +6,7 @@
         <el-row>
           <div style="padding: 15px;">
             <model-title size="large" :showMoreButton="false" :title="caseData.name" />
-            <detail-pic-list :imgList="caseData.imgList" interval="6000"/>
+            <detail-pic-list :imgList="caseData.imgList" :interval="6000"/>
           </div>
         </el-row>
         <el-row>
@@ -22,7 +22,7 @@
             />
             <el-carousel type="card" height="250px">
               <el-carousel-item v-for="(item, index) in caseData.relationProducts" :key="index">
-                <router-link :tag="div" :to="'/product/detail?id='+item.productId">
+                <router-link tag="div" :to="'/product/detail?id='+item.productId">
                   <div style="text-align: center;">
                     <el-image :src="item.imgUrl" style="height: 250px; width: 100%;" fit="cover" lazy />
                   </div>
