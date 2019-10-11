@@ -47,7 +47,7 @@
     </el-col>
     <el-col :xs="24" :sm="4" :lg="8">
       <div class="contact-box" style="text-align: center;">
-        <el-image fit="contain" class="trcode-image" :src="trCodeUrl" lazy />
+        <el-image fit="contain" class="trcode-image" :src="trCodeUrl" />
         <br />
         <span>{{ $t('footerContact.weChatQRCode') }}</span>
       </div>

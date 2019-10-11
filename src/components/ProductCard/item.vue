@@ -2,7 +2,7 @@
   <div>
     <router-link tag="div" :to="bashUrl">
       <div class="product-card-wrapper">
-        <el-image class="image-wrapper" fit="cover" :src="imgUrl" lazy />
+        <el-image class="image-wrapper" fit="cover" :src="imgUrl" />
         <div class="title-box">
           <span>{{ title }}</span>
         </div>

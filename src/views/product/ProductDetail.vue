@@ -28,7 +28,6 @@
                       :src="item.imgUrl"
                       style="height: 250px; width: 100%;"
                       fit="cover"
-                      lazy
                     />
                   </div>
                 </router-link>

@@ -14,7 +14,7 @@
               <el-row>
                 <el-col :xs="24" :sm="12" :lg="12">
                   <div style="text-align: center;">
-                    <el-image :src="item.imgUrl" style="height: 200px; width: 100%;" fit="cover" lazy />
+                    <el-image :src="item.imgUrl" style="height: 200px; width: 100%;" fit="cover" />
                   </div>
                 </el-col>
                 <el-col :xs="0" :sm="12" :lg="12">

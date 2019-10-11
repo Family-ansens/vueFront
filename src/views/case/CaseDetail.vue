@@ -24,7 +24,7 @@
               <el-carousel-item v-for="(item, index) in caseData.relationProducts" :key="index">
                 <router-link tag="div" :to="'/product/detail?id='+item.productId">
                   <div style="text-align: center;">
-                    <el-image :src="item.imgUrl" style="height: 250px; width: 100%;" fit="cover" lazy />
+                    <el-image :src="item.imgUrl" style="height: 250px; width: 100%;" fit="cover" />
                   </div>
                 </router-link>
               </el-carousel-item>
