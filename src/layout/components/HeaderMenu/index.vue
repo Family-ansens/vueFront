@@ -39,7 +39,7 @@ export default class HeaderMenu extends Vue {
   }
 
   private menuItem = [
-    { bashUrl: "/dashboard", index: "dashboard", name: 'dashboard' },
+    { bashUrl: "/", index: "dashboard", name: 'dashboard' },
     { bashUrl: "/product/list", index: "product-list", name: 'products' },
     { bashUrl: "/case/list", index: "case-list", name: 'cases' },
     { bashUrl: "/company/detail", index: "company-detail", name: 'company' },

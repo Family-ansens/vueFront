@@ -17,10 +17,10 @@ export const constantRoutes = [
     redirect: '/dashboard',
     children: [
       {
-        path: 'dashboard',
+        path: '',
         component: () => import('@/views/dashboard/dashboard.vue'),
         name: 'Dashboard',
-        meta: { title: '仪表盘' }
+        meta: { title: '欢迎安平县优瑞丝网机械制造有限公司（YR）' }
       }
     ]
   },
