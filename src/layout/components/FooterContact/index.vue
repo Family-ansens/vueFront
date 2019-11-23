@@ -24,9 +24,9 @@
           <div class="contact-box">
             <el-row>
               <el-col :xs="24" :sm="24" :lg="12">
-                <span>{{ $t('footerContact.qq') }}: 552453110</span>
+                <span>{{ $t('footerContact.qq') }}: 630510239</span>
                 <br />
-                <span>{{ $t('footerContact.weChat') }}: 15612839018</span>
+                <span>{{ $t('footerContact.weChat') }}: 17631803952</span>
                 <br />
                 <span>{{ $t('footerContact.phone') }}: +86 15612839018</span>
                 <br />
@@ -35,7 +35,7 @@
                 <span>WhatsApp:+86 15612839018</span>
               </el-col>
               <el-col :xs="24" :sm="24" :lg="12">
-                <span>{{ $t('footerContact.email') }}1: 552453110@qq.com</span>
+                <span>{{ $t('footerContact.email') }}1: yourui@puwiremesh.com</span>
                 <br />
                 <span>{{ $t('footerContact.email') }}2: puscreenmesh@gmail.com</span>
               </el-col>

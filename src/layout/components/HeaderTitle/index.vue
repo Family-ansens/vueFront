@@ -15,15 +15,15 @@
           <el-col class="topContactBox" :xs="12" :sm="12" :lg="6">
             <span class="hidden-xs-only hidden-sm-only">&nbsp;</span>
             <svg-icon class="svg-icon" name="微信" />
-            <span>15612839018</span>
+            <span>17631803952</span>
           </el-col>
           <el-col class="topContactBox" :xs="12" :sm="12" :lg="5">
             <svg-icon class="svg-icon" name="QQ" />
-            <span>552453110</span>
+            <span>630510239</span>
           </el-col>
           <el-col class="topContactBox" :xs="12" :sm="12" :lg="8">
             <svg-icon class="svg-icon" name="email" />
-            <span>552453110@qq.com</span>
+            <span>yourui@puwiremesh.com</span>
           </el-col>
           <el-col class="topContactBox" :xs="12" :sm="12" :lg="5">
             <el-dropdown trigger="click" @command="handleSetLanguage">
