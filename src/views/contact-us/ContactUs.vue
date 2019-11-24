@@ -46,7 +46,7 @@
                 <br />
                 <span>WhatsApp: +86 13231868828</span>
                 <br />
-                <span>{{ $t('footerContact.email') }}: helenhewiremesh@gmail.com</span>
+                <span>{{ $t('footerContact.email') }}: helenhe@puwiremesh.com</span>
               </div>
             </el-col>
             <el-col :xs="24" :sm="24" :lg="12">
@@ -57,7 +57,7 @@
                 <br />
                 <span>{{ $t('contactUs.address') }}</span>
                 <br />
-                <span>{{ $t('footerContact.email') }}: puwiremesh@gmail.com</span>
+                <span>{{ $t('footerContact.email') }}: yourui@puwiremesh.com</span>
                 <br />
               </div>
               <!-- second-box -->
