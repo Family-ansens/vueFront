@@ -39,15 +39,15 @@
         <el-row>
           <el-col :xs="24" :lg="22">
             <div class="topRightContactBox">
-              <svg-icon name="skype" color="#15ACE5" />
-              <svg-icon name="fackbook" color="#3C5A99" />
-              <svg-icon name="original-whatapp" color="#3EBE2A" />
-              <svg-icon name="youtube" color="#cc0002" />
-              <svg-icon name="优酷" color="#38CEFF #0B99FF #FF4A4A" />
-              <svg-icon name="推特" color="#0a71b0" />
-              <svg-icon name="领英" color="#008DC2" />
-              <svg-icon name="instagram" color="#D81E06" />
-              <svg-icon name="pinterest" color="#C02328" />
+              <a href="http://www.puwiremesh.com/contact-us" style="margin: 0 0 0 0;"><svg-icon name="skype" color="#15ACE5" /></a>
+              <a href="https://www.facebook.com/youruiwiremesh" target="_blank" style="margin: 0 0 0 0;"><svg-icon name="fackbook" color="#3C5A99" /></a>
+              <a href="http://www.puwiremesh.com/contact-us" style="margin: 0 0 0 0;"><svg-icon name="original-whatapp" color="#3EBE2A" /></a>
+              <a href="https://www.youtube.com/channel/UCtPGJ_ly1eCyGC5Pmvkn3qg" target="_blank" style="margin: 0 0 0 0;"><svg-icon name="youtube" color="#cc0002" /></a>
+              <a href="https://i.youku.com/i/UNzI5OTc5NzQ2NA" target="_blank" style="margin: 0 0 0 0;"><svg-icon name="优酷" color="#38CEFF #0B99FF #FF4A4A" /></a>
+              <a href="https://twitter.com/PUscreenmesh" target="_blank" style="margin: 0 0 0 0;"><svg-icon name="推特" color="#0a71b0" /></a>
+              <a href="https://www.linkedin.com/in/puscreenmesh" target="_blank" style="margin: 0 0 0 0;"><svg-icon name="领英" color="#008DC2" /></a>
+              <a href="https://www.instagram.com/youruiwiremesh" target="_blank" style="margin: 0 0 0 0;"><svg-icon name="instagram" color="#D81E06" /></a>
+              <a href="https://www.pinterest.com/youruiwiremesh" target="_blank" style="margin: 0 0 0 0;"><svg-icon name="pinterest" color="#C02328" /></a>
             </div>
           </el-col>
           <el-col :xs="0" :lg="2">
