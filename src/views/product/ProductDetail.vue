@@ -6,7 +6,7 @@
         <el-row>
           <div style="background-color: #171f2a; padding: 15px;">
             <model-title size="large" :showMoreButton="false" :title="productData.name" />
-            <detail-pic-list :imgList="productData.imgList" interval="6000"/>
+            <detail-pic-list :imgList="productData.imgList" :interval="6000"/>
           </div>
         </el-row>
         <el-row>
@@ -21,14 +21,13 @@
               :title="$t('products.relatedProductsTitle')"
             />
             <el-carousel type="card" height="250px">
-              <el-carousel-item v-for="item in relatedProducts" :key="item">
-                <router-link :tag="div" :to="'/product/detail?id='+item.id">
+              <el-carousel-item v-for="(item, index) in relatedProducts" :key="index">
+                <router-link tag="div" :to="'/product/detail?id='+item.id">
                   <div style="text-align: center;">
                     <el-image
                       :src="item.imgUrl"
                       style="height: 250px; width: 100%;"
                       fit="cover"
-                      lazy
                     />
                   </div>
                 </router-link>
@@ -60,7 +59,7 @@ import { MetaInfo } from "vue-meta";
         {
           // set meta
           name: "description",
-          content: this.$services.view.getTDK().description
+          content: this.$services.view.getTDK().description,
         }
       ]
       // link: [{                 // set link

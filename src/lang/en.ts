@@ -12,7 +12,7 @@ export default {
   },
   components: {
     moreButton: 'MORE',
-    languageButton: 'LANGUAGE',
+    languageButton: '<——切换语言',
   },
   menuItem: {
     dashboard: 'HOME',

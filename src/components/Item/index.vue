@@ -8,7 +8,7 @@
     <el-row :gutter="17">
       <router-link tag="div" :to="bashPath">
       <el-col :span="9">
-        <el-image class="image-wrapper" fit="cover" :src="picUrl" lazy />
+        <el-image class="image-wrapper" fit="cover" :src="picUrl" />
       </el-col>
       </router-link>
       <el-col :span="15">

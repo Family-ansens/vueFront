@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-row>
-      <el-col style="border-bottom: solid #ffffff 3px;">
+      <el-col>
         <el-scrollbar>
         <card-group-tab-item
           class="card-group-tab-item-wrapper"
@@ -10,7 +10,7 @@
           v-for="(item, index) in dataList"
           :key="index"
           :onClickEven="itemOnClickEven"
-          :isActive="index === activeIndex"
+          :isActive="index === cashActiveIndex"
         />
         </el-scrollbar>
       </el-col>
@@ -29,11 +29,13 @@ import CardGroupTabItem from "@/components/CardGroupTab/item.vue";
 })
 export default class CardGroupTab extends Vue {
   @Prop({ required: true }) private dataList!: any[];
-  @Prop({ required: true, default: 0 }) private activeIndex!: number;
+  @Prop({ default: 0 }) private activeIndex!: number;
   @Prop({}) private itemOnChangeEven!: (index: number) => void;
+  
+  private cashActiveIndex: number = this.activeIndex;
 
   private itemOnClickEven(index: number) {
-    this.activeIndex = index;
+    this.cashActiveIndex = index;
     this.itemOnChangeEven(index);
   }
 }

@@ -12,9 +12,9 @@
               <div class="contact-box first-box">
                 <span class="title">{{ $t('contactUs.ZHANGRUI') }}</span>
                 <br />
-                <span>{{ $t('footerContact.qq') }}: 552453110</span>
+                <span>{{ $t('footerContact.qq') }}: 630510239</span>
                 <br />
-                <span>{{ $t('footerContact.weChat') }}: 15612839018</span>
+                <span>{{ $t('footerContact.weChat') }}: 17631803952</span>
                 <br />
                 <span>{{ $t('footerContact.phone') }}: +86 15612839018</span>
                 <br />
@@ -22,7 +22,7 @@
                 <br />
                 <span>WhatsApp: +86 15612839018</span>
                 <br />
-                <span>{{ $t('footerContact.email') }}: 552453110@qq.com</span>
+                <span>{{ $t('footerContact.email') }}: yourui@puwiremesh.com</span>
               </div>
               <!-- second-box -->
               <div class="contact-box second-box">
@@ -46,7 +46,7 @@
                 <br />
                 <span>WhatsApp: +86 13231868828</span>
                 <br />
-                <span>{{ $t('footerContact.email') }}: helenhewiremesh@gmail.com</span>
+                <span>{{ $t('footerContact.email') }}: helenhe@puwiremesh.com</span>
               </div>
             </el-col>
             <el-col :xs="24" :sm="24" :lg="12">
@@ -57,7 +57,7 @@
                 <br />
                 <span>{{ $t('contactUs.address') }}</span>
                 <br />
-                <span>{{ $t('footerContact.email') }}: puwiremesh@gmail.com</span>
+                <span>{{ $t('footerContact.email') }}: yourui@puwiremesh.com</span>
                 <br />
               </div>
               <!-- second-box -->

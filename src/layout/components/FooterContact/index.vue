@@ -24,21 +24,21 @@
           <div class="contact-box">
             <el-row>
               <el-col :xs="24" :sm="24" :lg="12">
-            <span>{{ $t('footerContact.qq') }}: 552453110</span>
-            <br />
-            <span>{{ $t('footerContact.weChat') }}: 15612839018</span>
-            <br />
-            <span>{{ $t('footerContact.phone') }}: +86 15612839018</span>
-            <br />
-            <span>Skype:+86 15612839018</span>
-            </el-col>
-            <el-col :xs="24" :sm="24" :lg="12">
-            <span>WhatsApp:+86 15612839018</span>
-            <br />
-            <span>{{ $t('footerContact.email') }}1: 552453110@qq.com</span>
-            <br />
-            <span>{{ $t('footerContact.email') }}2: puscreenmesh@gmail.com</span>
-            </el-col>
+                <span>{{ $t('footerContact.qq') }}: 630510239</span>
+                <br />
+                <span>{{ $t('footerContact.weChat') }}: 17631803952</span>
+                <br />
+                <span>{{ $t('footerContact.phone') }}: +86 15612839018</span>
+                <br />
+                <span>Skype:+86 15612839018</span>
+                <br />
+                <span>WhatsApp:+86 15612839018</span>
+              </el-col>
+              <el-col :xs="24" :sm="24" :lg="12">
+                <span>{{ $t('footerContact.email') }}1: yourui@puwiremesh.com</span>
+                <br />
+                <span>{{ $t('footerContact.email') }}2: puscreenmesh@gmail.com</span>
+              </el-col>
             </el-row>
           </div>
         </el-col>
@@ -47,7 +47,7 @@
     </el-col>
     <el-col :xs="24" :sm="4" :lg="8">
       <div class="contact-box" style="text-align: center;">
-        <el-image fit="contain" class="trcode-image" :src="trCodeUrl" lazy />
+        <el-image fit="contain" class="trcode-image" :src="trCodeUrl" />
         <br />
         <span>{{ $t('footerContact.weChatQRCode') }}</span>
       </div>

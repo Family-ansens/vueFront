@@ -1,6 +1,5 @@
 <template>
   <div class="company-introduction">
-    <header-carousel />
     <model-title :showMoreButton="false" :title="$t('modelTitle.company')" size="large"/>
     <el-row>
       <el-col :xs="24" :sm="24" :lg="15" style="padding: 15px;">
@@ -83,7 +82,6 @@ export default class CompanyIntroduction extends Vue {
   .synopsis-text-box {
     padding: 15px;
     p {
-      word-break: break-all;
       -webkit-line-clamp: 11;
       display: -webkit-box;
       -webkit-box-orient: vertical;
